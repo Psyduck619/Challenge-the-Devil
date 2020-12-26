@@ -1,0 +1,76 @@
+<background></background>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{show}}"></view>
+<view class="tips" wx:if="{{show}}">
+<view class="title">
+  <view class="txt">挑战提示</view>
+</view>
+<view class="zhengwen">
+  <view class="test">接下来将进行教学关，加油吧</view>
+</view>
+<view bindtap="go" class="ok"><text class="button">我知道啦!</text></view>
+<view bindtap="next" class="ok2"><text class="button">我要跳过!</text></view>
+</view>
+
+<!-- 游戏上方介绍界面 -->
+  <view class="primary" style="animation: {{animation}}">
+<image src="{{image}}" class="primage"></image>
+</view>
+
+<view class="talk" wx:if="{{show2}}">
+<image src="http://yuan619.xyz/ll/talk.png" class="image" ></image>
+<view class="talktxt"><text>请选出相同的数字</text></view>
+</view>
+
+<view class="talk2" wx:if="{{show2}}">
+<image src="http://yuan619.xyz/ll/talk.png" class="image"></image>
+<view class="talktxt"><text>连续点击两次数字可取消选择</text></view>
+</view>
+
+
+<view class="game" wx:if="{{show2}}">
+
+<view class="math" bindtap="select1">
+  <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
+  <view class="tt" style="color:{{color1}}">{{number1}}</view>
+  <image wx:if="{{color1=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
+</view>
+
+<view class="math" bindtap="select2">
+  <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
+  <view class="tt" style="color:{{color2}}">{{number2}}</view>
+  <image wx:if="{{color2=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
+</view>
+
+<view class="math" bindtap="select3">
+  <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
+  <view class="tt" style="color:{{color3}}">{{number3}}</view>
+  <image wx:if="{{color3=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
+</view>
+
+<view class="math" bindtap="select4">
+  <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
+  <view class="tt" style="color:{{color4}}">{{number4}}</view>
+  <image wx:if="{{color4=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
+</view>
+
+<view class="math" bindtap="select5">
+  <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
+  <view class="tt" style="color:{{color5}}">{{number5}}</view>
+  <image wx:if="{{color5=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
+</view>
+
+</view>
+
+
+<view class="talk3" wx:if="{{show3}}">
+  <image src="http://yuan619.xyz/ll/talk.png" class="image"></image>
+  <view class="tkt">恭喜你通过教学关，进入正式挑战吧</view>
+</view>
+
+<view class="cover" wx:if="{{show3}}">
+    <view class="nav" bindtap="next">
+    <text class="natxt">正式挑战</text>
+    </view>
+
+</view>

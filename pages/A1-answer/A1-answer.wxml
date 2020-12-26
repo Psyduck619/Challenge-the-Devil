@@ -1,0 +1,27 @@
+<!--pages/look/look.wxml-->
+<image class="background" src="http://yuan619.xyz/wjl/main.jpg" mode="scaleToFill" />
+<view class="pos" >
+  <image class="avator" src="http://yuan619.xyz/wjl/tip.png" mode="widthFix" />
+</view>
+<view class="all">
+  <view class="title">
+    <view class="name"  style="background-image:url(http://yuan619.xyz/wjl/title.png)  ">
+      {{puzzle[current[currentPageId]-1].title}}
+    </view>
+  </view>
+  <view class="content">
+    <view wx:for="{{puzzle[current[currentPageId]-1].content}}" wx:key="index" class="content_item"
+      bindtap="handleviewtap" data-idx="{{index}}"
+      style="background-image:url(http://yuan619.xyz/wjl/wood.png)">
+      {{item}}
+    </view>
+
+  </view>
+
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class="zan-text">{{status}}</view>
+    </view>
+  </view>
+</view>

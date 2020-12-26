@@ -1,0 +1,16 @@
+<view id = "main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/wjl/main.jpg"></image> 
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+    <view id="text" >
+      <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+      <view id="font">
+        <text decode="true">&emsp;&emsp;魔法师寻找大魔王的途中,偶遇迷宫,需要通过一道道关卡,经过艰难险阻,才能走出迷宫。</text>
+      </view>
+    </view>
+    <!-- 开始按钮 -->
+    <view id="begin" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+  </view>

@@ -1,0 +1,77 @@
+<!--index.wxml-->
+  <view id='bg_image'>
+    <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/pjh/bg2.jpg"></image>
+<!-- 第一页 -->
+<image id="{{isPage1?'title':'hiden'}}" src="http://yuan619.xyz/teach.png"></image>
+    <view id="{{isPage1?'text':'hiden'}}">
+      <image src="http://yuan619.xyz/pjh/GIF2.gif"></image>
+    </view>
+    <view id="{{isPage1?'begin':'hiden'}}" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+<!-- 第二页 -->
+      <view id="{{isPage2?'textlab-bottom':'hiden'}}">
+        <image id='elf' src="http://yuan619.xyz/pjh/pjhelf.png"></image>
+        <view id="{{isPage2?'number':'hiden'}}">
+            <image src='{{number[numberid].img}}'></image>
+      </view>
+      </view>
+      <view id="{{isPage2?'textlab':'hiden'}}">
+            <image src='{{question[questionnum].questionimg}}'></image>
+      </view>
+<!-- 第三页 -->
+      <!-- 时间倒计时 -->
+    <view id="{{isPage3?'progress_box':'hiden'}}">
+      <!-- <view id="progress_box"> -->
+        <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas> 
+        <canvas class="progress_canvas" canvas-id="secondCanvas"></canvas>
+    </view>
+    <view id="{{isPage3?'question':'hiden'}}">
+      <view wx:if="{{imgnumber==4}}" class="imglist-fourimg" bindtap="selectimg" 
+      wx:for="{{question[questionnum].img}}" wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
+        <image class="{{selectid==i?'imglist-fourimg-image-select':'imglist-fourimg-image'}}" src='{{item}}'></image>
+      </view>
+
+      <view wx:if="{{imgnumber==9}}" class="imglist-nineimg" bindtap="selectimg" 
+      wx:for="{{question[questionnum].img}}" wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
+        <image class="{{selectid==i?'imglist-fourimg-image-select':'imglist-fourimg-image'}}" src='{{item}}'></image>
+        
+      </view>
+
+      
+    </view>
+<!-- 选中图片确定后，确定按钮变为下一问按钮 -->
+    <view wx:if="{{isPage4==false}}" id="{{isPage3?'check':'hiden'}}" bindtap="over">
+      <text class="button">确定</text>
+    </view>
+    <view wx:if="{{isPage4==true}}" id="{{k==6?'check-visibility':'next'}}" bindtap="begin">
+      <text class="button">下一题</text>
+    </view>
+    <!-- 正确与否提示 -->
+    <view wx:if="{{ifAnswerRight==1}}" id="ans">
+      <image id='ans-bg-image' src="http://yuan619.xyz/pjh/kuang.png"></image>
+      <view class='ansleft'><image src="http://yuan619.xyz/elf.png"></image></view>
+      <view class='ansright'>
+        <text>太厉害了！</text>
+        <text>保持这个状态！</text>
+        <image src="http://yuan619.xyz/pjh/yes.png"></image>
+      </view>
+    </view>
+    <view wx:if="{{ifAnswerRight==2}}" id="ans">
+      <image id='ans-bg-image' src="http://yuan619.xyz/pjh/kuang.png"></image>
+      <view class='ansleft'><image src="http://yuan619.xyz/elf.png"></image></view>
+    <view class='ansright'>
+      <text>只差一点！</text>
+      <text>下一问加油！</text>
+      <image src="http://yuan619.xyz/pjh/no.png"></image>
+    </view>
+    </view>
+<!-- 下一关 -->
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class="zan-text" wx:if="{{practice==false}}">恭喜你找出了大魔王！</view>
+      <view class="zan-text" wx:if="{{practice==true}}">你的分数为:{{scole}}</view>
+    </view>
+  </view>

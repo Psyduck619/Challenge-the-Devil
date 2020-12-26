@@ -1,0 +1,16 @@
+<view id = "main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/ll/bg.jpg"></image> 
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+    <view id="text" >
+      <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+      <view id="font">
+        <text decode="true">&emsp;&emsp;为了打败大魔王，你决定踏上旅途，但在此之前你必须得到一把趁手的武器,\n&emsp;&emsp;而铁匠为了考验勇者是否有打败魔王的能力，决定给你一个挑战。</text>
+      </view>
+    </view>
+    <!-- 开始按钮 -->
+    <view id="begin" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+  </view>

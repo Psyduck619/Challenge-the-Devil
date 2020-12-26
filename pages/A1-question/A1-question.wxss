@@ -1,0 +1,89 @@
+.background {
+  width: 750rpx;
+  height: 100%;
+  position: fixed;
+  /* background-size:100% 100%; */
+  z-index: -1;
+}
+
+.name {
+  margin: 0 auto;
+  color: #ff8500;
+  height: 300rpx;
+  text-align: center;
+  line-height: 300rpx;
+  width: 600rpx;
+  font-size: 30px;
+  font-weight: bold;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.time {
+  color: #7DE346;
+  margin-top: 50rpx;
+}
+
+.pos {
+  position: fixed;
+  top: 180rpx;
+  left: 0;
+}
+
+.avator {
+  width: 260rpx;
+}
+
+.content {
+  margin: 100rpx auto 0;
+  width: 600rpx;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+}
+
+.item {
+
+  width: 440rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  color: red;
+  font-size: 35px;
+  font-weight: 700;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.timer {
+  font-size: 70px;
+  font-weight: 700;
+  position: fixed;
+  top: 160rpx;
+  right:100rpx;
+  color: #001140;
+  animation: swing 1s .15s linear infinite;
+}
+
+@keyframes swing {
+  10% {
+    transform: rotate(20deg);
+  }
+
+  20% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(10deg);
+  }
+
+  40% {
+    transform: rotate(-10deg);
+  }
+
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+}

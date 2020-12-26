@@ -1,0 +1,35 @@
+<view class="container wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
+	<view class="s">
+		<view class="name">
+			<text class="question">亲爱的魔法师:</text>
+			<text class="text2">1.请问你的名字是?</text>
+			<input type="text" placeholder="请输入姓名..." value="{{name}}" bindinput="nameInput"></input>
+		</view>
+		<view class="sex">
+			<text class="sex">2.请问你是男生还是女生?</text>
+			<radio-group class="radio_group" bindchange="radioChange">
+				<radio class="radio" wx:for="{{sexs}}" wx:key="num" value="{{item.num}}" checked="{{item.checked}}">
+					<text style='margin-left: 0px;'>{{item.value}}</text>
+				</radio>
+			</radio-group>
+		</view>
+		<view class="age">
+			<text class="text">3.请问你的年龄是?</text>
+			<view class='select_box'>
+				<view class='select' catchtap='selectTap'>
+					<text class='select_text'>{{selectData[index]}}</text>
+					<image class='select_img {{show&&"select_img_rotate"}}' src='http://yuan619.xyz/icon/down.png'></image>
+				</view>
+				<view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+					<text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>
+					{{item}}
+					</text>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="kid" style="background-image:url(../../../../images_y/magic_kid.png);background-position-x: {{personPosition}};"></view>
+	<view class="start" bindtap="bind_start">
+		<button class="button">开启冒险之旅</button>
+	</view>
+</view>

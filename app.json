@@ -1,0 +1,65 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/login/login",
+    "pages/comment/comment",
+    "pages/select/select",
+    "pages/win/win",
+    "pages/my/my",
+    "pages/history/history",
+    "pages/userinfo/userinfo",
+    "pages/contact/contact",
+    "pages/practice/practice",
+    "pages/S1-story1/S1-story1",
+    "pages/S1-1/S1-1",
+    "pages/S1-2/S1-2",
+    "pages/S1-story2/S1-story2",
+    "pages/A-story1/A-story1",
+    "pages/A1-teach/A1-teach",
+    "pages/A1-question/A1-question",
+    "pages/A1-answer/A1-answer",
+    "pages/A2-test/A2-test",
+    "pages/A2-teach/A2-teach",
+    "pages/A-story2/A-story2",
+    "pages/P1-story/P1-story",
+    "pages/P1-logs/P1-logs",
+    "pages/P1-practice/P1-practice",
+    "pages/P1/P1"
+  ],
+  "requiredBackgroundModes": ["audio", "location"],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "挑战大魔王",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#75aeee",
+    "backgroundColor": "#ffffff",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "游戏",
+        "pagePath": "pages/index/index",
+        "iconPath": "images_y/tabBar/game.png",
+        "selectedIconPath": "images_y/tabBar/game_focus.png"
+      },
+      {
+        "text": "练习",
+        "pagePath": "pages/practice/practice",
+        "iconPath": "images_y/tabBar/practice.png",
+        "selectedIconPath": "images_y/tabBar/practice_focus.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/my/my",
+        "iconPath": "images_y/tabBar/my.png",
+        "selectedIconPath": "images_y/tabBar/my_focus.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

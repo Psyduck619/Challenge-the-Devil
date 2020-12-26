@@ -1,0 +1,41 @@
+page{
+  height: 100vh;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  background-color: white;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20rpx;
+  overflow: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.input{
+  width: 600rpx;
+  height: 300rpx;
+  border: rgb(119, 64, 12) solid 2px;
+  background-color: rgb(236,236,198);
+  color: rgb(19, 19, 57);
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
+  margin-top: 200rpx;
+  padding: 8rpx;
+}
+.commit{
+  width: 10rpx;
+  height: 100rpx;
+  border: rgb(119, 64, 12) solid 2px;
+  background-color: rgb(236, 236, 198);
+  color: rgb(119, 64, 12);
+  text-align: center;
+  margin-top: 50rpx;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,34 @@
+<!--pages/index/test/test.wxml-->
+<image class="background" src="http://yuan619.xyz/wjl/main.png" mode="scaleToFill" />
+<view class="all">
+  <view class="title">
+    <view class="pos">
+      <image class="avator" src="http://yuan619.xyz/elf.png" mode="widthFix" />
+    </view>
+    <view class="right" style="background-image:url(http://yuan619.xyz/wjl/title.png)">
+      <view class="name">
+        寻找黑体斜体数字
+      </view>
+      <view class="time">
+        {{minute}}:{{second }}:{{mills%100 }}
+      </view>
+    </view>
+  </view>
+  <view class="content" style="background-image:url(http://yuan619.xyz/wjl/wood2.png)  ">
+    <view class='row' wx:for="{{num}}" wx:for-item="row" wx:for-index="i" wx:key="index">
+      <view class='cell {{select[i][j]===1?"green":""}}' wx:for="{{row}}" wx:for-item="cell" wx:for-index="j"
+        wx:key="index">
+        <view class='cell_con {{keynum[i][j]?"cell_bold":""}} ' bindtap="handletapview" data-row="{{i}}"
+          data-col="{{j}}">
+          {{cell}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class="zan-text">恭喜你,通过沼泽!</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/exp/exp.wxml-->
+<image class="background" src="http://yuan619.xyz/wjl/main.jpg" mode="scaleToFill" />
+<view class="pos" >
+  <image class="avator" src="http://yuan619.xyz/wjl/tip.png" mode="widthFix" />
+</view>
+<view class="all">
+    <view class="name"
+    style="background-image:url(http://yuan619.xyz/wjl/title.png)  ">
+      {{title[currentPageId]}}
+    </view>
+  <view class="content">
+    <view class="item"   wx:for="{{puzzle[current[currentPageId]-1].content}}"
+    wx:key="index" style="color:{{item.color}}; margin-bottom:{{puzzle[current[currentPageId]-1].margin_bottom}} ;background-image:url(http://yuan619.xyz/wjl/wood.png) "
+     >
+      {{item.name}}
+    </view>
+  </view>
+
+  <view class="timer">
+    {{time}}
+  </view>
+</view>

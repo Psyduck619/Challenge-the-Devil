@@ -1,0 +1,36 @@
+<view class="container" style="background-image:url(../../../../images_y/background.png)">
+  <view class="block block1">
+    <text class="title">整顿装备(计划力训练)</text>
+    <view class="game">
+      <button class="button" bindtap="game1">数字配对</button>
+      <button class="button" bindtap="game2">舒尔特方格</button>
+    </view>
+  </view>
+  <view class="block block2">
+    <text class="title">长途跋涉(注意力训练)</text>
+    <view class="game">
+      <button class="button" bindtap="game3">表达性注意</button>
+      <button class="button" bindtap="game4">找数游戏</button>
+    </view>
+  </view>
+  <view class="block block3">
+    <text class="title">寻找魔王(同时性编码训练)</text>
+    <view class="game">
+      <button class="button" bindtap="game5">言语加工</button>
+      <button class="button" bindtap="game6">图形记忆</button>
+    </view>
+  </view>
+  <view class="block block4">
+    <text class="title">大战魔王(继时性编码训练)</text>
+    <view class="game">
+      <button class="button">舒尔特方格</button>
+      <button class="button">舒尔特方格</button>
+    </view>
+  </view>
+  <view class="block block5">
+    <text class="title">综合训练</text>
+    <view class="game">
+      <button class="button">翻牌游戏</button>
+    </view>
+  </view>
+</view>

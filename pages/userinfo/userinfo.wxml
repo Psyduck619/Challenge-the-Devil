@@ -1,0 +1,34 @@
+<view class="container flex-wrap" style="background-image:url(../../../../images_y/background.png)">
+  <view class="s">
+    <view class="name item">
+    <image class="icon" src="http://yuan619.xyz/icon/child.png"></image>
+    <text class="text">名字</text>
+    <input type="text" placeholder="请输入姓名..." value="{{name}}" bindinput="nameInput"></input>
+  </view>
+  <view class="sex item">
+    <image class="icon" src="http://yuan619.xyz/icon/sex.png"></image>
+    <text class="text">性别</text>
+    <radio-group class="radio_group" bindchange="radioChange">
+      <radio class="radio" wx:for="{{sexs}}" wx:key="num" value="{{item.num}}" checked="{{item.checked}}">
+        <text style='margin-left: 0px;'>{{item.value}}</text>
+      </radio>
+    </radio-group>
+  </view>
+  <view class="age item">
+    <image class="icon" src="http://yuan619.xyz/icon/age.png"></image>
+    <text class="text">年龄</text>
+    <view class='select_box'>
+      <view class='select' catchtap='selectTap'>
+        <text class='select_text'>{{selectData[index]}}</text>
+        <image class='select_img {{show&&"select_img_rotate"}}' src='http://yuan619.xyz/icon/down.png'></image>
+      </view>
+      <view class='option_box' style='height:{{show?(selectData.length>5?300:selectData.length*60):0}}rpx;'>
+        <text class='option' style='{{index==selectData.length-1&&"border:0;"}}' wx:for='{{selectData}}' wx:key='this' data-index='{{index}}' catchtap='optionTap'>
+          {{item}}
+        </text>
+      </view>
+    </view>
+  </view>
+  </view>
+  <button class="commit" bindtap="commit">保存</button>
+</view>

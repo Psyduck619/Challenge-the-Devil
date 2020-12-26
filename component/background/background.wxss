@@ -1,0 +1,7 @@
+.background{ width: 100%;}
+.background image{ height: 1448rpx;width: 750rpx; position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  z-index: 0;}

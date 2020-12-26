@@ -1,0 +1,23 @@
+<view id = "main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/wjl/main.jpg"></image> 
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+    <view id="text" >
+      <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+      <view id="font">
+        <text decode="true">&emsp;&emsp;魔法师遇到沼泽,决定毅然前行.一路上小心翼翼,唯恐踩进沼泽.在避开无数陷阱障碍后,前方终于出现了大魔王的城堡。</text>
+      </view>
+    </view>
+    <!-- 开始按钮 -->
+    <view id="begin" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+
+  </view>
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view class="zan-text">接下来是教学关,点击确定可跳过</view>
+  </view>
+</view>

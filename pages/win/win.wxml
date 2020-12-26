@@ -1,0 +1,12 @@
+<view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
+  <view class="top flex-wrap">
+    <view class="kid" style="background-image:url(../../../../images_y/magic_kid.png);background-position-x: {{personPosition}};"></view>
+    <view class="title" style="background-image:url(../../../../images_y/success.png)"></view>
+  </view>
+  <text class="score">*你的得分:</text>
+  <text class="game game1">整顿装备：{{score[0] + '/100'}}</text>
+  <text class="game game2">长途跋涉：{{score[1] + '/100'}}</text>
+  <text class="game game3">寻找魔王：{{score[2] + '/100'}}</text>
+  <text class="game game4">大战魔王：{{score[3] + '/100'}}</text>
+  <text class="game next">查看能力值</text>
+</view>

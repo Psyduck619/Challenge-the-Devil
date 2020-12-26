@@ -1,0 +1,21 @@
+<scroll-view class="container flex-wrap" style="background-image:url(../../../../images_y/background.png)">
+	<view class="null" wx:if="{{!hasInfo}}">
+		<text>无游戏记录</text>
+	</view>
+	<view wx:else class="list-wrap">
+		<view class="history-list" wx:for="{{list}}" data-id="{{item.id}}" wx:key="key" bindtap="getId">
+			<view class="game flex-wrap">
+				<text class="game1">整顿装备：{{item.score1 + item.score2}}</text>
+				<text class="game2">长途跋涉：{{item.score3 + item.score4}}</text>
+			</view>
+			<view class="game flex-wrap">
+				<text class="game3">寻找魔王：{{item.score5 + item.score6}}</text>
+				<text class="game4">大战魔王：{{item.score7 + item.score8}}</text>
+			</view>
+			<view class="bottom flex-wrap">
+				<text class="time">{{item.finishTime}}</text>
+				<text class="more" bindtap="getInfo">查看详情></text>
+			</view>
+		</view>
+	</view>
+</scroll-view>

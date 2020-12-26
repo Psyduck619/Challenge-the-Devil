@@ -1,0 +1,54 @@
+<scroll-view class="container flex-wrap" style="background-image:url(../../../../images_y/background.png)">
+	<view class="radar">
+		<!-- <template is="radar"  data="{{radarData: radarData}}"/> -->
+		<view class="charts-radar">
+			<block wx:if="{{currentRadarImage}}">
+				<image class="radar-canvas-result" src="{{currentRadarImage}}"></image>
+			</block>
+		</view>
+		<radar-canvas aspect-canvas="{{aspectCanvas}}" radar-data="{{radarData}}" bindradarTap="radarUpdate">
+		</radar-canvas>
+    <text class="tip" edcode>*综合能力受游戏整体完成速度影响</text>
+	</view>
+	<view class="s">
+		<view class="block block1">
+			<view class="title">
+				<image class="icon" src="http://yuan619.xyz/icon/attention.png"></image>
+				<text class="text">计划力得分：{{dimension[4] + '/100'}}</text>
+			</view>
+			<view class="text-wrap">
+				<text class="text">{{content[0]}}</text>
+			</view>
+		</view>
+		<view class="block block2">
+			<view class="title">
+				<image class="icon plan" src="http://yuan619.xyz/icon/plan.png"></image>
+				<text class="text">注意力得分：{{dimension[1] + '/100'}}</text>
+			</view>
+			<view class="text-wrap">
+				<text class="text">{{content[1]}}</text>
+			</view>
+		</view>
+		<view class="block block3">
+			<view class="title">
+				<image class="icon" src="http://yuan619.xyz/icon/hourglass.png"></image>
+				<text class="text">同时性编码得分：{{dimension[3] + '/100'}}</text>
+			</view>
+			<view class="text-wrap">
+				<text class="text">{{content[2]}}</text>
+			</view>
+		</view>
+		<view class="block block4">
+			<view class="title">
+				<image class="icon" src="http://yuan619.xyz/icon/time.png"></image>
+				<text class="text">继时性编码得分：{{dimension[2] + '/100'}}</text>
+			</view>
+			<view class="text-wrap">
+				<text class="text">{{content[3]}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="strat">
+		<button class="button" bindtap="toFirst">回到首页</button>
+	</view>
+</scroll-view>

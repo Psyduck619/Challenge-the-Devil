@@ -1,0 +1,16 @@
+<view id = "main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/pjh/bg1-.jpg"></image> 
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+    <view id="text" >
+      <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+      <view id="font">
+        <text decode="true">&emsp;&emsp;魔法师来到了大魔王的城堡，门口的杰克南瓜却拦住了魔法师的去路，你需要正确回答杰克的问题，才能成功进入大魔王的城堡。</text>
+      </view>
+    </view>
+    <!-- 开始按钮 -->
+    <view id="begin" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+  </view>
