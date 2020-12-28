@@ -171,8 +171,8 @@ Page({
     })
   },
   nextGame(){
-    wx.redirectTo({
-      url: '../S2-story2/S2-story2'
+    wx.switchTab({
+      url: '/pages/practice/practice',
     })
   },
   //选择选项
