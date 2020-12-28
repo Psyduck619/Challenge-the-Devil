@@ -269,7 +269,7 @@ var question_four = [
       'http://yuan619.xyz/pjh/1question3-7.jpg',
       'http://yuan619.xyz/pjh/1question3-8.jpg'],
       postId:'26',
-      answerindex:'2',
+      answerindex:'1',
       imgnum:'4',
     },
     //题目4 27-35
