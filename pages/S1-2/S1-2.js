@@ -198,30 +198,52 @@ Page({
     }
    },
    //看题倒计时
-   daojishi:function(options){
-    var that=this;
-   var numberid=this.data.numberid
- 
-     var i = setInterval(function() {
-       numberid=numberid+1;
-       if (numberid>=5) {
-         let isPage2=that.data.isPage2;
-         let isPage3=that.data.isPage3;
-           isPage2=false;
-           isPage3=true;
-           that.answerdaojishi();
-         that.setData({
-           isPage2:isPage2,
-           isPage3:isPage3
-         })
-            clearInterval(i)
-       } else {
-         that.setData({
-           numberid:numberid
-         })
-        console.log(numberid)
-       }
-  }, 1000)
+   daojishi: function (options) {
+    var that = this;
+    var numberid = this.data.numberid
+    if (this.data.imgnumber == 4) {
+      var i = setInterval(function () {
+        numberid = numberid + 1;
+        if (numberid >= 6) {
+          let isPage2 = that.data.isPage2;
+          let isPage3 = that.data.isPage3;
+          isPage2 = false;
+          isPage3 = true;
+          that.answerdaojishi();
+          that.setData({
+            isPage2: isPage2,
+            isPage3: isPage3
+          })
+          clearInterval(i)
+        } else {
+          that.setData({
+            numberid: numberid
+          })
+          console.log(numberid)
+        }
+      }, 1000)
+    } else if (this.data.imgnumber == 9) {
+      var i = setInterval(function () {
+        numberid = numberid + 1;
+        if (numberid >= 10) {
+          let isPage2 = that.data.isPage2;
+          let isPage3 = that.data.isPage3;
+          isPage2 = false;
+          isPage3 = true;
+          that.answerdaojishi();
+          that.setData({
+            isPage2: isPage2,
+            isPage3: isPage3
+          })
+          clearInterval(i)
+        } else {
+          that.setData({
+            numberid: numberid
+          })
+          console.log(numberid)
+        }
+      }, 1000)
+    }
   },
    //选择图片
    selectimg(option)

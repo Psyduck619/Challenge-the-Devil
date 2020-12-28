@@ -98,22 +98,24 @@ Page({
             console.log("...fail...");
           }
         })
-        wx.request({
-          url: 'https://www.yuan619.xyz:8887/history/upscore10',
-          data: {
-            id: app.globalData.gameId
-          },
-          method: 'POST',
-          header: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          success: function (res) {
-            console.log(res.data);
-          },
-          fail: function (res) {
-            console.log("...fail...");
-          }
-        })
+        setTimeout(() => {
+          wx.request({
+            url: 'https://www.yuan619.xyz:8887/history/upscore10',
+            data: {
+              id: app.globalData.gameId
+            },
+            method: 'POST',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            success: function (res) {
+              console.log(res.data);
+            },
+            fail: function (res) {
+              console.log("...fail...");
+            }
+          })
+        }, 500)
         setTimeout(() => {
           wx.redirectTo({
             url: '/pages/win/win'
