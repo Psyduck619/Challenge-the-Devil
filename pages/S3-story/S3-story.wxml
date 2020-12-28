@@ -1,0 +1,14 @@
+<view id="main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/lcy/game_background.png"></image>
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+  <view id="text">
+    <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+    <view id="font">
+      <text decode="true">&emsp;&emsp;大魔王被你发现后无处可藏，是时候使用魔法来攻击他了！你用魔法棒召唤出了一些卡牌，将这些卡牌两两配对即可对大魔王造成伤害！</text>
+    </view>
+  </view>
+  <!-- 开始按钮 -->
+  <view id="begin" bindtap="begin">确定</view>
+</view>

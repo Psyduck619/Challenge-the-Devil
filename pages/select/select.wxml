@@ -28,7 +28,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="kid" style="background-image:url(../../../../images_y/magic_kid.png);background-position-x: {{personPosition}};"></view>
+	<view class="kid" style="background-image:url(http://yuan619.xyz/lsq/magic_kid2.png);background-position-x: {{personPosition}};"></view>
 	<view class="start" bindtap="bind_start">
 		<button class="button">开启冒险之旅</button>
 	</view>

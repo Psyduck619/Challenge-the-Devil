@@ -1,0 +1,95 @@
+<!--index.wxml-->
+<view id='bg_image' style="background-image: url('http://yuan619.xyz/xy/game2_background.png');">
+  <!-- 游戏教程页 -->
+  <image id="{{isPage1?'title':'hidden'}}" src="http://yuan619.xyz/teach.png"></image>
+  <view id="{{isPage1?'text':'hidden'}}">
+    <image src="http://yuan619.xyz/pjh/GIF1.gif"></image>
+  </view>
+  <view id="{{isPage1?'begin':'hidden'}}" bindtap="jumpBtn">
+    <text class="button">开始</text>
+  </view>
+  <!-- 题目展示 -->
+  <view id="{{isPage2?'showproblem1':'hidden'}}">
+    <view id="hint">问题描述</view>
+    <view id="problem">
+      {{question[(questionnum*2)+random].problem1}}
+    </view>
+  </view>
+  <view id="{{isPage2?'showproblem':'hidden'}}">
+    <view id="award">
+      <view id="treasure">
+        <image style="width: 130px; height: 130px;" src="http://yuan619.xyz/xy/treasure.png" mode="aspectFit"></image>
+      </view>
+      <view id="showaward">
+        <image style="width: 130px; height: 130px;" src="{{question[(questionnum*2)+random].award}}" mode="aspectFit">
+        </image>
+      </view>
+    </view>
+  </view>
+  <view id="{{isPage2?'lefttime':'hidden'}}" bindtap="speedup">
+    20秒倒计时: {{second}}s
+  </view>
+  <!--问题界面-->
+  <view id="{{isPage3?'showproblem2':'hidden'}}">
+    <view id="question">问题: </view>
+    <view id="question">{{question[(questionnum*2)+random].problem2}}</view>
+  </view>
+  <view id="{{isPage3?'showAnswer':'hidden'}}">
+    <view wx:for="{{question[(questionnum*2)+random].answer}}" wx:for-item="item" wx:for-index="i" wx:key="*this"
+      data-index="{{i}}" bindtap="selectAnswer">
+      <view wx:if="{{selectIndex[i]==0}}" class="answer">{{item}}</view>
+      <view wx:if="{{selectIndex[i]==1}}" class="answer_select">{{item}}</view>
+    </view>
+    <view id="speedup" bindtap="speedup">确定</view>
+    <view id="lefttime1">
+      20秒倒计时: {{second}}s
+    </view>
+  </view>
+  <!-- 过关提示 -->
+  <!-- 回答正确 -->
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==1&&questionnum!=4}}">
+    <view class="title">
+      <view class="txt">答对啦！</view>
+    </view>
+    <view class="zhengwen2">
+      <view class="left">
+        <view>太棒了</view>
+        <view>你获得了奖励:</view>
+      </view>
+      <view class="right">
+        <image src="{{question[(questionnum*2)+random].award}}" mode="aspectFit"></image>
+      </view>
+    </view>
+    <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
+  </view>
+  <!-- 回答错误 -->
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==0&&questionnum!=4}}">
+    <view class="title">
+      <view class="txt">回答错误</view>
+    </view>
+    <view class="zhengwen2">
+      <view class="left">
+        <image src="http://yuan619.xyz/elf.png" mode="aspectFit"></image>
+      </view>
+      <view class="right">
+        <view>别灰心！</view>
+        <view>下一题加油！</view>
+      </view>
+    </view>
+    <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
+  </view>
+  <!-- 完成关卡 -->
+  <view class="tips1" wx:if="{{isPage4&&questionnum==4}}">
+    <view class="title">
+      <view class="txt" wx:if="{{practice==false}}">恭喜通关</view>
+      <view class="txt" wx:if="{{practice==true}}">练习完成</view>
+    </view>
+    <view class="zhengwen3">
+      <view class="pass" wx:if="{{practice==false}}">恭喜你通关了国王的考验</view>
+      <view class="pass" wx:if="{{practice==true}}">你的分数为：{{score}}</view>
+    </view>
+    <view class="ok" bindtap="jumpBtn">
+      <view class="button1">确定</view>
+    </view>
+  </view>
+</view>

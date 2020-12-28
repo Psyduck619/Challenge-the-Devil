@@ -15,6 +15,7 @@ Page({
   },
   //上传信息
   bind_start:function(e){
+    app.globalData.practice = false
     let that = this
     //更新魔法师信息
     wx.request({
@@ -44,30 +45,35 @@ Page({
     })
     app.globalData.sex = this.data.sex
     //初始化游戏历史数据
-    // wx.request({
-    //   url: 'https://www.yuan619.xyz:8887/history/upinfo',
-    //   header: {
-    //    "Content-Type": "application/x-www-form-urlencoded"
-    //   },
-    //   method: "POST",
-    //   data: {
-    //     openid: app.globalData.openid,
-    //     age: that.data.age
-    //   },
-    //   success: function (res) {
-    //    console.log(res)
-    //    app.globalData.gameId = res.data.id
-    //    if(res){
-    //       console.log("游戏初始化成功!")
-    //    }
-    //   },
-    //   fail: function (res) {
-    //    console.log(res)
-    //    if(res == null){
-    //      console.log("游戏初始化失败!")
-    //    }
-    //   }
-    // })
+    wx.request({
+      url: 'https://www.yuan619.xyz:8887/history/upinfo',
+      header: {
+       "Content-Type": "application/x-www-form-urlencoded"
+      },
+      method: "POST",
+      data: {
+        openid: app.globalData.openid,
+        age: that.data.age
+      },
+      success: function (res) {
+       app.globalData.gameId = Number(res.data.list.id)
+       app.globalData.level = Number(res.data.list.level)
+       console.log("游戏初始化id和level:" + app.globalData.gameId)
+       console.log(app.globalData.level)
+       if(res){
+          console.log("游戏初始化成功!")
+       }
+      },
+      fail: function (res) {
+       console.log(res)
+       if(res == null){
+         console.log("游戏初始化失败!")
+       }
+      }
+    })
+    wx.redirectTo({
+      url: '/pages/P1-story/P1-story'
+    })
   },
   //得到输入的姓名
   nameInput:function(e){

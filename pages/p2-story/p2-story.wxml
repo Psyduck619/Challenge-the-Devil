@@ -1,0 +1,59 @@
+<view id="background">
+  <!-- 背景介绍区域 -->
+  <image id='title' wx:if="{{!reading}}" src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+  <view id="text" wx:if="{{!reading}}">
+    <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+    <view id="font">
+      <text decode="true">&emsp;&emsp;为了给你的魔杖附魔，你来到了一家魔法药水店，可店里的附魔药水正好卖完了，你需要按数字顺序来制作附魔药水，配置速度越快效果越好，快去配置药水吧小魔法师！</text>
+    </view>
+  </view>
+  <!-- 小精灵提示区 -->
+  <view id="hint" wx:if="{{reading&&!closeGrid}}">
+    <view id="hint1">
+      <view class="text2" wx:if="{{reading&&readingtime!=0&&!iswrong}}">在倒计时结束前尽可能多看点数字</view>
+      <view class="text2" wx:if="{{reading&&num==0&&readingtime==0&&!over&&!iswrong}}">接下来先点击数字1</view>
+      <view class="text2" wx:if="{{reading&&num==1&&readingtime==0&&!iswrong}}">太好了，接下来继续点击数字2</view>
+      <view class="text2" wx:if="{{reading&&num==2&&readingtime==0&&!iswrong}}">接下来是数字3</view>
+      <view class="text2" wx:if="{{reading&&num>2&&readingtime==0&&!iswrong}}">之后按照数字顺序依次点击</view>
+      <view class="text2" wx:if="{{reading&&readingtime==0&&iswrong}}">哦，你点错了，仔细想想正确的数字顺序</view>
+    </view>
+    <!-- 倒计时 -->
+    <view id="hint2">
+      <text id="timehint" wx:if="{{!closeGrid&&readingtime!=0}}">倒计时</text>
+      <text id="timehint" wx:if="{{!closeGrid&&readingtime==0}}">开始答题!\n</text>
+      <text class="time-recorder1" wx:if="{{!closeGrid&&readingtime!=0}}" style="color:red;">{{readingtime}}</text>
+      <text class="timehint" wx:if="{{reading&&readingtime==0&&iswrong}}">提示:点击{{num+1}}</text>
+    </view>
+  </view>
+  <!-- 游戏区域 -->
+  <view class="container" wx:if="{{!closeGrid&&canlook}}">
+    
+    <view wx:for="{{numbers}}" wx:key="*this" wx:for-item="item" wx:for-index="i" data-index="{{i}}">
+      <view class="'grid' {{num !=item ? (clickId == item && item !== num + 1 ? 'test' : ''):'grid-disable' }}"
+        animation="{{(item == clickId) && (num == 1 || item == num +1)? scaleData : ''}}"
+        style="width:{{width}}; height:{{width}};font-size: {{fontSize}};" bind:touchstart="clickMe" id="{{item}}">
+        <text>{{item}}</text>
+      </view>
+    </view>
+    <image id="yaoguo" src="http://yuan619.xyz/skdyaoguo.png"></image>
+  </view>
+
+
+  <!-- 跳出弹框 -->
+<view class="tips" wx:if="{{closeGrid}}" buttons="{{oneButton}}">
+<view class="title">
+  <view class="txt">恭喜</view>
+</view>
+<view class="zhengwen">
+  <view class="test">你成功通过了教学关，</view>
+  <view class="test">开始正式游戏吧！</view>
+</view>
+<view bindtap="skip" class="ok"><text class="button">开始游戏</text></view>
+</view>
+
+  <view id="button_area" wx:if="{{!reading}}">
+    <view id="button" bind:touchstart="readcountDown"><text class="button">开始教程</text></view>
+    <view id="button" bind:touchstart="skip"><text class="button">跳过教程</text></view>
+  </view>
+</view>

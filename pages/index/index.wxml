@@ -3,7 +3,7 @@
   <view class="head">
     <image class="sound-icon" style="background-image:url(http://yuan619.xyz/icon/sound.png); background-position-x: {{on? 0:-70}}rpx; " bindtap="stop"></image>
   </view>
-  <view class="title flex-wrap" style="background-image:url(../../../../images_y/title.png)">
+  <view class="title flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/title.png)">
     <!-- <text class="text1">认知学堂——</text>
     <text class="text2">挑战大魔王</text> -->
   </view>

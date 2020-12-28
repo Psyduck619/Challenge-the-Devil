@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        practice:false,
+        practice: false,
         showDialog2: false,
         puzzle: [{
                 title: "第二个文字是什么",
@@ -103,7 +103,7 @@ Page({
      */
     onLoad: function (options) {
         console.log(options)
-        
+
         let time = app.globalData.time1
         let err = app.globalData.error
         let id = parseInt(options.id)
@@ -116,7 +116,7 @@ Page({
             errorTime: err,
             // top: top,
             current: app.globalData.current,
-            practice:getApp().globalData.practice
+            practice: getApp().globalData.practice
         })
         console.log(this.data.current)
 
@@ -134,13 +134,13 @@ Page({
     },
     handleviewtap(e) {
         let tar = parseInt(e.target.dataset.idx);
-        this.handleIsRight(tar);   
+        this.handleIsRight(tar);
         let id = this.data.currentPageId + 1;
         //跳转之前,需要保存或者发送数据
         app.globalData.time1 = this.data.timer;
         app.globalData.error = this.data.errorTime;
         //判断是否为第六关,只有第六关可以跳转
-        if (id == 2) {
+        if (id == 6) {
             /*计算分数
                 回答错误 扣3分 , 时间上每过1秒扣0.5分,低于一定分数启动保底机制
                 保留0位小数
@@ -154,51 +154,49 @@ Page({
                 app.globalData.A1score = (50 - 2 * app.globalData.error - t * 0.1).toFixed(0);
             }
             console.log(app.globalData.A1score);
-                            // wx.request({
-    //         url: 'http://121.196.102.238:8887/history/upscore3',
-    //         data: {
-    //           id: ,
-    //           score:app.globalData.A1score,
-    //         },
-    //         method: 'POST',
-    //         header: {
-    //           "Content-Type": "application/x-www-form-urlencoded"
-    //         },
-    //         success: function (res) {
-    //           console.log(res.data);
-    //         },
-    //         fail: function (res) {
-    //           console.log("...fail...");
-    //         }
-    //       })
-            if(getApp().globalData.practice==true){
+            if (getApp().globalData.practice == true) {
                 this.setData({
-                    status: "你的得分为 :"+app.globalData.A1score,
+                    status: "你的得分为 :" + app.globalData.A1score * 2,
                     showDialog: !this.data.showDialog
                 })
-                
-            }
-            else if(getApp().globalData.practice==false){
+
+            } else if (getApp().globalData.practice == false) {
                 this.setData({
                     status: "恭喜你走出迷宫！",
                     showDialog: !this.data.showDialog
                 })
+                wx.request({
+                    url: 'https://www.yuan619.xyz:8887/history/upscore3',
+                    data: {
+                      id: app.globalData.gameId,
+                      score: app.globalData.A1score,
+                    },
+                    method: 'POST',
+                    header: {
+                      "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    success: function (res) {
+                      console.log(res.data);
+                    },
+                    fail: function (res) {
+                      console.log("...fail...");
+                    }
+                  })
             }
-            
+
             setTimeout(function () {
-                if(getApp().globalData.practice==false){
-                  wx.redirectTo({
-                    url: '/pages/A-story2/A-story2'
-                  })
+                if (getApp().globalData.practice == false) {
+                    wx.redirectTo({
+                        url: '/pages/A-story2/A-story2'
+                    })
+                } else if (getApp().globalData.practice == true) {
+                    wx.switchTab({
+                        url: '/pages/practice/practice',
+                    })
                 }
-                else if(getApp().globalData.practice==true){
-                  wx.switchTab({
-                    url: '/pages/practice/practice',
-                  })
-                }
-                
-              },1500);
-            
+
+            }, 1500);
+
         }
         //继续跳向下一题
         else {
@@ -212,16 +210,14 @@ Page({
             }, 1100);
         }
     },
-    handleIsRight(tar)
-    {
+    handleIsRight(tar) {
         let current = this.data.current
         let currentPage = this.data.currentPageId
         if (tar === this.data.puzzle[current[currentPage] - 1].rightnum) {
             this.setData({
                 status: "恭喜你答对了！"
             })
-        }
-        else {
+        } else {
             let error = this.data.errorTime + 1;
             this.setData({
                 status: "好可惜，下一题加油！",

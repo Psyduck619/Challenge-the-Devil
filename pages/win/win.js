@@ -5,7 +5,13 @@ Page({
     score: [],
     personPosition: 'left'
   },
+  toNext: () =>{
+    wx.redirectTo({
+      url: '/pages/comment/comment',
+    })
+  },
   onShow: function () {
+    wx.hideHomeButton()
     let that = this
     if(app.globalData.sex == 2){
       this.setData({

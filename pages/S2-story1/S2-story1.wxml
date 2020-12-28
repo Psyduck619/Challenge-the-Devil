@@ -1,0 +1,16 @@
+<view id = "main">
+  <!-- 背景图 -->
+  <image id='bg-image' mode="scaleToFill" src="http://yuan619.xyz/xy/game1_background1.png"></image> 
+  <image id='title' src="http://yuan619.xyz/story.png"></image>
+  <!-- 内容 -->
+    <view id="text" >
+      <image id='paper' src="http://yuan619.xyz/paper.png"></image>
+      <view id="font">
+        <text decode="true">&emsp;&emsp;在魔法卡牌的轮番攻击后，大魔王的血量已经明显下降了。\n&emsp;&emsp;此时只要正确念出咒语就可以一举击败他！你能正确还原咒语吗？</text>
+      </view>
+    </view>
+    <!-- 开始按钮 -->
+    <view id="begin" bindtap="begin">
+      <text class="button">确定</text>
+    </view>
+  </view>

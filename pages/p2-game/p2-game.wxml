@@ -1,0 +1,87 @@
+<view id="background">
+  <!-- 顶端 -->
+  <view id="hint" wx:if="{{reading&&!closeGrid}}">
+    <!-- 小精灵提示区 -->
+    <view id="hint1" wx:if="{{!canclick||num==0}}"></view>
+    <view id="hint2" wx:if="{{num!=0&&canclick&&!iswrong}}"></view>
+    <view id="hint3" wx:if="{{canclick&&iswrong}}"></view>
+    <!-- 倒计时 -->
+    <view id="timehint">
+      <text id="timetext" wx:if="{{!closeGrid&&!hasStarted}}">倒计时</text>
+      <text id="timetext" wx:if="{{!closeGrid&&!hasStarted}}" style="color:red;">{{readingtime}}s</text>
+      <text id="timetext" wx:if="{{!closeGrid&&hasStarted}}">当前用时</text>
+      <text id="timetext" wx:if="{{!closeGrid&&hasStarted}}" style="color:red;">{{time}}</text>
+    </view>
+  </view>
+  <!-- 热身界面 -->
+  <view id="hint_slot" wx:if="{{!reading}}">
+    <image  mode="aspectFit" src="http://yuan619.xyz/skd/hint_slot.png"></image>
+  </view>
+  <!-- 游戏区域 -->
+	<view class="area" wx:if="{{!closeGrid&&canlook}}">
+    
+    <view class="container" >
+      <image id="yaoguo" src="http://yuan619.xyz/skdyaoguo.png"></image>
+      <view class="grid-container" wx:for="{{numbers}}" wx:key="this">
+        <view 
+            class="'grid' {{num !=item ? (clickId == item && item !== num + 1 ? 'test' : ''):'grid-disable' }}" 
+            animation="{{(item == clickId) && (num == 1 || item == num +1)? scaleData : ''}}"
+            style="width:{{width}}; height:{{width}};font-size: {{fontSize}};" 
+            bind:touchstart="clickMe" 
+            id="{{item}}"
+          >
+          <text>{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 跳出弹框 -->
+<view class="tips" wx:if="{{closeGrid&&cancontinue}}" buttons="{{oneButton}}">
+<view class="title">
+  <view class="txt">恭喜</view>
+</view>
+<view class="zhengwen">
+  <view class="test">此关用时:{{time}}</view>
+</view>
+<view bindtap="continue" class="ok"><text class="button">继续挑战</text></view>
+</view>
+  <!-- <mp-dialog class="pptips" title="恭喜通关!" show="{{closeGrid&&cancontinue}}" buttons="{{oneButton}}" bindbuttontap="continue">
+    <view>此关用时</view>
+    <view>{{time}}</view>
+  </mp-dialog> -->
+
+    <!-- 跳出弹框 -->
+<view class="tips" wx:if="{{closeGrid&&!cancontinue}}" buttons="{{oneButton}}">
+<view class="title">
+  <view class="txt">练习完成</view>
+</view>
+<view class="zhengwen">
+  <view class="test">此关用时:{{time}}</view>
+</view>
+<view bindtap="next" class="ok"><text class="button">完成挑战</text></view>
+</view>
+
+    <!-- <mp-dialog title="练习完成!" show="{{closeGrid&&!cancontinue}}" buttons="{{oneButton1}}" bindbuttontap="next">
+      <view>此关用时</view>
+      <view>{{time}}</view>
+    </mp-dialog> -->
+
+    <!-- 跳出弹框 -->
+  <view class="tips" wx:if="{{closeGrid&&!cancontinue&&searchscore}}" buttons="{{oneButton2}}">
+    <view class="zhengwen2"  wx:if="{{practice==false}}">
+      <text>你成功为魔杖附魔！</text></view>
+  <view class="zhengwen2"  wx:if="{{practice==true}}">
+    <text>你的分数为：{{finalsocre}}</text></view>
+  <view class="ok" bindtap="finish"><text class="button">确定</text></view>
+  </view>
+    <!-- <mp-dialog title="分数情况" show="{{closeGrid&&!cancontinue&&searchscore}}" buttons="{{oneButton2}}" bindbuttontap="finish">
+      <view>综合得分:{{finalsocre}}</view>
+    </mp-dialog> -->
+
+  <!-- 开始按钮 -->
+  <view id = "button_area">
+    <text id="button" bind:touchstart="readcountDown" wx:if="{{!reading}}">开始游戏</text>
+  </view>
+
+</view>

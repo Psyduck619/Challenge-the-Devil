@@ -67,7 +67,7 @@
 </view>
 <view class="zhengwen2">
   <view class="tnt"  wx:if="{{practice==false}}">恭喜你获得绝世武器！</view>
-  <view class="tnt"  wx:if="{{practice==true}}">你的分数为：{{score}}</view>
+  <view class="tnt"  wx:if="{{practice==true}}">你的分数为：{{score * 2}}</view>
 </view>
-<view class="ok" bindtap="nextGame"><text class="button">我知道啦!</text></view>
+<view class="ok" bindtap="nextGame"><text class="button">确定</text></view>
 </view>

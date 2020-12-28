@@ -16,6 +16,7 @@ Page({
     })
   },
   onLoad: function () {
+    wx.hideHomeButton()
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -50,5 +51,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onShow: function () {
+    wx.hideHomeButton()
   }
 })

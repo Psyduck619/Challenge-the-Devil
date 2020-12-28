@@ -3,6 +3,7 @@
 var questionInfo = require('../../data/question2.js');
 var numberInfo=require('../../data/number.js');
 const question = require('../../data/question.js');
+const app = getApp();
 Page({
   data: {
     practice:false,
@@ -276,7 +277,7 @@ Page({
       var that=this
      var score=60+this.data.scole*8
      this.setData({
-       scole:score
+       scole:score/2
      })
      console.log(this.data.scole,"分")
      setTimeout(() =>{
@@ -284,30 +285,31 @@ Page({
         showDialog: !that.data.showDialog
       })
     }, 500) 
-               // wx.request({
-   //         url: 'http://121.196.102.238:8887/history/upscore3',
-   //         data: {
-   //           id: ,
-   //           score:score,
-   //         },
-   //         method: 'POST',
-   //         header: {
-   //           "Content-Type": "application/x-www-form-urlencoded"
-   //         },
-   //         success: function (res) {
-   //           console.log(res.data);
-   //         },
-   //         fail: function (res) {
-   //           console.log("...fail...");
-   //         }
-   //       })
        setTimeout(function () {
          if(getApp().globalData.practice==false){
+          wx.request({
+            url: 'https://www.yuan619.xyz:8887/history/upscore6',
+            data: {
+              id: app.globalData.gameId,
+              score: that.data.scole,
+            },
+            method: 'POST',
+            header: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            success: function (res) {
+              console.log(res.data);
+            },
+            fail: function (res) {
+              console.log("...fail...");
+            }
+          })
            wx.redirectTo({
-             url: '/pages/1-story1/S1-story1'
+             url: '/pages/S3-story/S3-story'
            })
          }
          else if(getApp().globalData.practice==true){
+          console.log(that.data.scole)
           wx.switchTab({
             url: '/pages/practice/practice',
           })

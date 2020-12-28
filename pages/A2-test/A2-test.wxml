@@ -28,7 +28,8 @@
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <view class="zan-dialog__mask" bindtap="toggleDialog" />
     <view class="zan-dialog__container">
-      <view class="zan-text">恭喜你,通过沼泽!</view>
+      <view class="zan-text" wx:if="{{practice==false}}">恭喜你通过沼泽!</view>
+      <view class="zan-text" wx:if="{{practice==true}}">你的分数为:{{score * 2}}</view>
     </view>
   </view>
 </view>

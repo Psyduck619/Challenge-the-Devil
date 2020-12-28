@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container" style="background-image:url(../../../../images_y/background.png)">
+<view class="container" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
   <view class="background" style="background:url({{userInfo.avatarUrl}});background-size:100% 100%;"></view>
   <view class="userinfo">
     <button class="btn" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" 
@@ -18,7 +18,7 @@
     <text class="user-motto">{{motto}}</text>
   </view> -->
   <view class="mylist" bindtap="changeBtn" wx:for="{{myList}}" wx:key="index" data-id="{{item.id}}" 
-    style="background-image:url(../../../../images_y/text_back.png)">
+    style="background-image:url(http://yuan619.xyz/lsq/text_back.png)">
     <view class="idx">
       <view class="img">
         <image src="{{item.img}}"></image>
@@ -27,7 +27,7 @@
         <text>{{item.text}}</text>
       </view>
       <view class="right">
-        <image src="../../icons_y/right.png"></image>
+        <image src="http://yuan619.xyz/lsq/right.png"></image>
       </view>
     </view>
   </view>

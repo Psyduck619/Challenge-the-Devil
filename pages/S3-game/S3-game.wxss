@@ -1,0 +1,139 @@
+.score {
+    display: flex;
+    font-size: 1vh;
+}
+
+.scoredetail {
+    flex: 1;
+    height: 130rpx;
+    width: 750rpx;
+    background: rgba(0, 0, 0, 0.9);
+    /*opacity: 0.6; */
+    margin: 50rpx 20rpx 40rpx 20rpx;
+    text-align: center;
+    border-radius: 11rpx;
+}
+
+.scoredetail:last-child {
+    margin-right: 40rpx;
+}
+
+.scoredesc {
+    font-size: 0.9rem;
+    line-height: 50rpx;
+    margin-top: 10rpx;
+    color: rgb(253, 253, 245);
+}
+
+.scorenumber {
+    line-height: 60rpx;
+    font-size: 1.1rem;
+    margin-top: 5rpx;
+    color: rgb(253, 253, 245);
+}
+
+.board {
+    width: 750rpx;
+    height: 1200rpx;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.rows {
+    margin-bottom: 1rpx;
+    padding: 0rpx;
+    text-align: center;
+    flex-direction: row;
+    display: flex;
+}
+
+.cols {
+    margin: 5rpx;
+}
+
+.card {
+    width: 155rpx;
+    height: 217rpx;
+    margin-left: 6rpx;
+    border-radius: 10rpx;
+    border: solid rgb(211, 80, 11) 9rpx;
+}
+
+.card_back {
+    width: 155rpx;
+    height: 217rpx;
+    margin-left: 6rpx;
+    border-radius: 10rpx;
+    border: solid rgb(211, 80, 11) 9rpx;
+}
+
+#bg {
+    background: url('http://yuan619.xyz/lcy/game_background.png');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 弹窗 */
+.tips {
+    width: 580rpx;
+    height: 400rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -200rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: rgb(119, 64, 12) solid 3px;
+    border-radius: 25rpx;
+    background-color: rgb(236, 236, 198);
+    color: rgb(119, 64, 12);
+}
+
+.tips .title {
+    width: 200rpx;
+    height: 60rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 25rpx;
+}
+
+.tips .title .txt {
+    font-size: 50rpx;
+}
+.tips .zhengwen2{
+    width: 400rpx;
+    height: 470rpx;
+    position: absolute;
+    top: 150rpx;
+  }
+ 
+  .tips .zhengwen2 .tnt{
+   font-size: 32rpx;
+    font-weight: 700;
+  }
+  .tips .ok{
+    border: rgb(119, 64, 12) solid 3px;
+    border-radius: 15rpx;
+    background-color: rgb(236, 236, 198);
+    color: rgb(119, 64, 12);
+     position: absolute;
+     top: 275rpx;
+     color: green;
+   }
+   .button{
+    margin: 5px 5px 5px 5px;
+   /* width: 30%; */
+   font-size: 40rpx;
+   font-weight: 600;
+   text-align: center;
+  }

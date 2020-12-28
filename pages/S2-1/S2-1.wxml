@@ -1,0 +1,80 @@
+<!--index.wxml-->
+<view id="bg_image">
+  <!-- 游戏教程页 -->
+  <image id="{{isPage1?'title':'hidden'}}" src="http://yuan619.xyz/teach.png"></image>
+  <view id="{{isPage1?'text':'hidden'}}">
+    <image src="http://yuan619.xyz/pjh/GIF1.gif"></image>
+  </view>
+  <view id="{{isPage1?'begin':'hidden'}}" bindtap="jumpBtn">
+    <text class="button">开始</text>
+  </view>
+  <!-- 咒语展示 -->
+  <view id="{{isPage2?'textlab':'hidden'}}"
+    style="background-image:url({{question[(questionnum*3)+random].question}});">
+  </view>
+  <view id="{{isPage2?'number':'hidden'}}">
+    记住咒语!!!
+  </view>
+  <view id="{{isPage2?'begin':'hidden'}}" bindtap="startGame">
+    <text class="button">开始还原</text>
+  </view>
+  <view id="{{isPage2||isPage3? 'timer':'hidden'}}">
+    <view>
+      时间:{{second}}s
+    </view>
+  </view>
+  <!-- 开始答题 -->
+  <!-- 答题情况卷轴展示 -->
+  <view id="{{isPage3?'secretPaper':'hidden'}}" bindtap="selectimg"
+    style="background-image:url('http://yuan619.xyz/xy/secret_paper.png');">
+    <view id="{{right[i]==1?'word':'hidden'}}" wx:for="{{question[(questionnum*3)+random].right}}" wx:for-item="item"
+      wx:for-index="i" wx:key="*this" data-index="{{i}}">{{item}}</view>
+  </view>
+  <!-- 选项展示 -->
+  <view id="{{isPage3?'question':'hidden'}}">
+    <view id="hint">{{hint[ifAnswerRight]}}</view>
+    <view id="answer">
+      <view wx:if="{{imgnumber==9}}" bindtap="selectimg" wx:for="{{question[(questionnum*3)+random].img}}"
+        wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
+        <view wx:if="{{selectIndex[i]==0}}" class="imglist-nineimg">{{item}}</view>
+        <view wx:if="{{selectIndex[i]==1}}" class="imglist-nineimg-image-yes">{{item}}</view>
+        <view wx:if="{{selectIndex[i]==2}}" class="imglist-nineimg-image-no'">{{item}}</view>
+      </view>
+      <view wx:if="{{imgnumber==4}}" bindtap="selectimg" wx:for="{{question[(questionnum*3)+random].img}}"
+        wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
+        <view wx:if="{{selectIndex[i]==0}}" class="imglist-fourimg">{{item}}</view>
+        <view wx:if="{{selectIndex[i]==1}}" class="imglist-fourimg-image-yes">{{item}}</view>
+        <view wx:if="{{selectIndex[i]==2}}" class="imglist-fourimg-image-no'">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 过关提示-->
+  <view id="{{isPage4?'success':'hidden'}}"
+    style="background-image:url('http://yuan619.xyz/xy/game1_background22.png')">
+    <view class='ansleft'>
+      <image src="http://yuan619.xyz/elf.png"></image>
+    </view>
+    <view class='ansright'>
+      <view wx:if="{{questionnum==0}}">继续加油!</view>
+      <view wx:if="{{questionnum==0}}">大魔王残血了!</view>
+      <view wx:if="{{questionnum==1}}">恭喜你!</view>
+      <view wx:if="{{questionnum==1}}">大魔王被打败了</view>
+      <view id="showtime">
+        <view>此关耗时</view>
+        <view>{{timecount}}</view>
+      </view>
+    </view>
+  </view>
+  <view id="{{isPage4?'begin':'hidden'}}" bindtap="jumpBtn">
+    <text class="button">下一关</text>
+  </view>
+</view>
+<view class="tips" wx:if="{{showhint}}">
+  <view class="title">
+    <view class="txt">挑战成功</view>
+  </view>
+  <view class="zhengwen2">
+    <view class="tnt">你的分数为：{{score}}</view>
+  </view>
+  <view class="ok" bindtap="nextGame"><text class="button">我知道了!</text></view>
+</view>

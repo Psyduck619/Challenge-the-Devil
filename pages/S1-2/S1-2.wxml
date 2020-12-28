@@ -72,6 +72,6 @@
     <view class="zan-dialog__mask" bindtap="toggleDialog" />
     <view class="zan-dialog__container">
       <view class="zan-text" wx:if="{{practice==false}}">恭喜你找出了大魔王！</view>
-      <view class="zan-text" wx:if="{{practice==true}}">你的分数为:{{scole}}</view>
+      <view class="zan-text" wx:if="{{practice==true}}">你的分数为:{{scole * 2}}</view>
     </view>
   </view>

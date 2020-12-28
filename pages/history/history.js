@@ -35,12 +35,18 @@ Page({
       success: function (res) {
         let list2 = res.data.list
         console.log(list2);
+        let list3 = []
         for(let i = 0; i < list2.length; i++){
-          list2[i].finishTime = list2[i].finishTime.substring(0, 
-            list2[i].finishTime.length - 10).replace('T', ' ')
+          if(list2[i].score9 != 0){
+            list3.push(list2[i])
+          }
+        }
+        for(let i = 0; i < list3.length; i++){
+          list3[i].finishTime = list3[i].finishTime.substring(0, 
+            list3[i].finishTime.length - 10).replace('T', ' ')
         }
         that.setData({
-          list: list2
+          list: list3
         })
         if(list2){
           that.setData({

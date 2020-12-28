@@ -11,17 +11,17 @@ Page({
       {
         "id": "1",
         "text": "游戏记录",
-        "img": "../../icons_y/history.png"
+        "img": "http://yuan619.xyz/lsq/history.png"
       },
       {
         "id": "2",
         "text": "孩子信息",
-        "img": "../../icons_y/personal.png"
+        "img": "http://yuan619.xyz/lsq/personal.png"
       },
       {
         "id": "3",
         "text": "联系我们",
-        "img": "../../icons_y/email.png"
+        "img": "http://yuan619.xyz/lsq/email.png"
       }
     ]
   },
@@ -45,9 +45,9 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    // wx.navigateTo({
+    //   url: '../logs/logs'
+    // })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

@@ -24,7 +24,16 @@
     "pages/P1-story/P1-story",
     "pages/P1-logs/P1-logs",
     "pages/P1-practice/P1-practice",
-    "pages/P1/P1"
+    "pages/P1/P1",
+    "pages/p2-story/p2-story",
+    "pages/p2-game/p2-game",
+    "pages/S3-story/S3-story",
+    "pages/S3-gif/S3-gif",
+    "pages/S3-game/S3-game",
+    "pages/S2-story1/S2-story1",
+    "pages/S2-1/S2-1",
+    "pages/S2-story2/S2-story2",
+    "pages/S2-2/S2-2"
   ],
   "requiredBackgroundModes": ["audio", "location"],
   "window":{
@@ -35,7 +44,7 @@
   },
   "tabBar": {
     "color": "#aaa",
-    "selectedColor": "#75aeee",
+    "selectedColor": "#0337ff",
     "backgroundColor": "#ffffff",
     "position": "bottom",
     "borderStyle": "white",

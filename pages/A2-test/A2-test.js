@@ -113,6 +113,8 @@ Page({
         second: 0,
         minute: 0,
         showDialog: false,
+        practice:false,
+        score:0
     },
 
     /**
@@ -127,7 +129,8 @@ Page({
                 num:this.data.n1,
                 keynum:this.data.k1,
                 select:this.data.s1,
-                BOLD_NUM:this.data.b1
+                BOLD_NUM:this.data.b1,
+                practice:getApp().globalData.practice
             })
         }
         else if(getApp().globalData.level==1)
@@ -136,7 +139,8 @@ Page({
                 num:this.data.n2,
                 keynum:this.data.k2,
                 select:this.data.s2,
-                BOLD_NUM:this.data.b2
+                BOLD_NUM:this.data.b2,
+                practice:getApp().globalData.practice
             })
         }
         setInterval(this.increase, 111)
@@ -187,12 +191,39 @@ Page({
                 时间上每过1秒扣0.4分
                 保留0位小数
             */
-           app.globalData.score2=(50- app.globalData.time2/1000*0.4).toFixed(0);
-            console.log("此题得分"+app.globalData.score2);
+           app.globalData.A2score=(50- app.globalData.time2/1000*0.4).toFixed(0);
+            console.log("此题得分"+app.globalData.A2score);
+            this.setData({
+                score:  app.globalData.A2score
+            })
             setTimeout(function () {
-                wx.redirectTo({
-                    url: '/pages/finish/finish',
-                })
+                if(getApp().globalData.practice==false){
+                    wx.request({
+                        url: 'https://www.yuan619.xyz:8887/history/upscore4',
+                        data: {
+                          id: app.globalData.gameId,
+                          score: app.globalData.A2score,
+                        },
+                        method: 'POST',
+                        header: {
+                          "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        success: function (res) {
+                          console.log(res.data);
+                        },
+                        fail: function (res) {
+                          console.log("...fail...");
+                        }
+                      })
+                    wx.redirectTo({
+                      url: '/pages/S1-story1/S1-story1'
+                    })
+                  }
+                  else if(getApp().globalData.practice==true){
+                    wx.switchTab({
+                      url: '/pages/practice/practice',
+                    })
+                  }
             }, 1050)
         }
     },

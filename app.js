@@ -1,4 +1,5 @@
-//app.js
+const { getOpenId, getRecord } = require('./request/request');
+const {mockData} =require('./utils/utils')
 App({
   onLaunch: function () {
     //云开发初始化
@@ -49,6 +50,28 @@ App({
         }
       }
     })
+    this.startAudio();
+  },
+  stopAudio: function () {
+    this.globalData.audio = false;
+    this.buttonAudio.destroy();
+    this.clickAudio.destroy();
+    this.clockAudio.destroy();
+    this.successAudio.destroy();
+  },
+  startAudio: function () {
+    this.globalData.audio = true;
+
+    this.buttonAudio = wx.createInnerAudioContext()
+    this.clickAudio = wx.createInnerAudioContext()
+    this.clockAudio = wx.createInnerAudioContext()
+    this.successAudio = wx.createInnerAudioContext()
+    
+    this.buttonAudio.src = '/img/button.mp3'
+    this.clickAudio.src='/img/click.mp3'
+    this.clockAudio.src='/img/clock1.mp3'
+    this.successAudio.src= '/img/success.mp3'
+    this.clockAudio.loop = true;
   },
   globalData: {
     //index
@@ -81,7 +104,9 @@ App({
     //第一关的分数
     A1score: 50,
     //第二关分数
-    A2score: 50
-    //
+    A2score: 50,
+    //skd
+    authorize:false,
+    ...mockData()
   }
 })

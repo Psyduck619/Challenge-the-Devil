@@ -1,0 +1,428 @@
+#hidden {
+  display: none;
+}
+
+/* 教程页 */
+#title {
+  height: 100px;
+  width: 300px;
+}
+
+#bg_image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+#text {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  height: 400px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#text image {
+  height: 90%;
+  width: 85%;
+}
+
+#begin {
+  width: 110px;
+  height: 100rpx;
+  /* margin: 0 auto; */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: rgb(119, 64, 12) solid 3px;
+  border-radius: 25rpx;
+  background-color: rgb(236, 236, 198);
+  color: rgb(119, 64, 12);
+}
+
+.button {
+  /* width: 30%; */
+  font-size: 48rpx;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 题目展示页 */
+#showproblem1 {
+  height: 57vw;
+  width: 100vw;
+  background-size: cover;
+  background-image: url('http://yuan619.xyz/xy/question_background3.png');
+  display: flex;
+  flex-direction: column;
+}
+
+#showproblem {
+  height: 73vw;
+  width: 100vw;
+  background-size: cover;
+  background-image: url('http://yuan619.xyz/xy/award_background.png');
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  align-items: center;
+}
+
+#hint {
+  height: 20%;
+  font-size: 45rpx;
+}
+
+#problem {
+  font-size: 45rpx;
+  font-weight: 600;
+  width: 70vw;
+  margin-left: 5vw;
+}
+
+#award {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 100%;
+  margin-top: 15px;
+  align-items: center;
+  border-radius: 5%;
+
+}
+
+#treasure {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+#showaward {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  animation: shadow 1.5s linear infinite;
+}
+
+
+#lefttime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 30px;
+  font-size: 30rpx;
+  background-color: rgb(179, 248, 252);
+  border-radius: 10px;
+}
+
+
+@keyframes shadow {
+
+  0%,
+  100% {
+    transform: scale(0.85);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+}
+
+/* 正式答题页 */
+#showproblem2 {
+  margin-top: 5vw;
+  height: 51vw;
+  width: 90vw;
+  background-size: cover;
+  background-image: url('http://yuan619.xyz/xy/question_background3.png');
+  display: flex;
+  flex-direction: column;
+}
+
+#showAnswer {
+  height: 110vw;
+  width: 80vw;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#question {
+  font-size: 45rpx;
+  font-weight: 600;
+  margin-top: 5vw;
+  width: 65vw;
+  margin-left: 5vw;
+}
+
+.answer {
+  height: 16vw;
+  width: 66vw;
+  font-size: 36rpx;
+  background-size: cover;
+  background-image: url('http://yuan619.xyz/xy/select_option22.png');
+  display: flex;
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer_select {
+  height: 16vw;
+  width: 66vw;
+  font-size: 36rpx;
+  background-size: cover;
+  color: white;
+  font-weight: 800;
+  background-image: url('http://yuan619.xyz/xy/select_option11.png');
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#speedup {
+  display: flex;
+  width: 170rpx;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 40rpx;
+  color: black;
+  background-color: rgb(202, 228, 271);
+  border-radius: 15rpx;
+
+}
+
+#lefttime1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 30px;
+  font-size: 30rpx;
+  background-color: rgb(202, 228, 227);
+  border-radius: 10px;
+}
+
+#word {
+  margin: 20px;
+}
+
+#hint {
+  display: flex;
+  margin-top: 10px;
+  height: 50px;
+  width: 320px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 过关提示 */
+#nextquestion {
+  margin-top: 10%;
+  height: 60%;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-size: 100% 100%;
+  background-color: rgba(233, 200, 241, 0.9);
+}
+
+.ansleft {
+  height: 50%;
+  width: 50%;
+}
+
+.ansleft image {
+  width: 100%;
+  height: 100%;
+}
+
+.ansright {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 70%;
+  align-items: center;
+  justify-content: center;
+}
+
+#awardimg {
+  height: 100px;
+  width: 90px;
+  display: flex;
+}
+
+#awardimg image {
+  height: 100%;
+  width: 100%;
+}
+
+.ansright view {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 45rpx;
+  color: red;
+}
+
+#showtime {
+  margin-top: 30px;
+  font-size: 45rpx;
+  color: antiquewhite;
+}
+
+#next {
+  display: flex;
+  width: 180rpx;
+  height: 80rpx;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 40rpx;
+  color: black;
+  background-color: white;
+  border-radius: 15rpx;
+  border: solid black 1px;
+  margin-bottom: 30px;
+}
+
+/* 过关提示 */
+.tips {
+  width: 580rpx;
+  height: 600rpx;
+  border: rgb(119, 64, 12) solid 3px;
+  border-radius: 25rpx;
+  background-color: rgb(236, 236, 198);
+  color: rgb(119, 64, 12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tips1 {
+  width: 580rpx;
+  height: 400rpx;
+  border: rgb(119, 64, 12) solid 3px;
+  border-radius: 25rpx;
+  background-color: rgb(236, 236, 198);
+  color: rgb(119, 64, 12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.title {
+  width: 580rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title .txt {
+  font-size: 50rpx;
+}
+
+.ok {
+  width: 580rpx;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips .zhengwen2 {
+  width: 580rpx;
+  height: 400rpx;
+  display: flex;
+}
+.tips1 .zhengwen3 {
+  width: 580rpx;
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  font-weight: 500;
+}
+
+.left {
+  width: 290rpx;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  font-weight: 600;
+}
+
+.left image {
+  width: 80%;
+  height: 80%;
+}
+
+.right {
+  width: 290rpx;
+  height: 400rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40rpx;
+  font-weight: 600;
+  flex-direction: column;
+}
+
+.right image {
+  width: 100%;
+  height: 100%;
+}
+
+.tips .zhengwen2 .tnt {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.button1 {
+  border: rgb(119, 64, 12) solid 3px;
+  border-radius: 15rpx;
+  background-color: rgb(236, 236, 198);
+  width: 100px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+  padding: 5rpx;
+  font-size: 48rpx;
+  font-weight: 700;
+}

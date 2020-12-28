@@ -1,0 +1,19 @@
+<view id='bg_image' style="background-image: url('http://yuan619.xyz/lcy/game_background.png');">
+  <!-- 游戏教程页 -->
+  <image id="title" src="http://yuan619.xyz/teach.png"></image>
+  <view id="text">
+    <image src="http://yuan619.xyz/lcy/gamedemo.gif"></image>
+  </view>
+  <view id="begin" bindtap="startGame">
+  开始
+  </view>
+</view>
+
+<!-- 
+    <view class="box" bindtap="viewScore" style="display:none">
+      <image class="pic" src="http://yuan619.xyz/lcy/tips.png">
+      </image>
+      <view class="ceng">
+        <view class="title">查看排名</view>
+      </view>
+    </view> -->

@@ -26,6 +26,7 @@ Page({
     })
   },
   onShow: function () {
+    wx.hideHomeButton()
     let that = this
     wx.request({
       url: 'https://www.yuan619.xyz:8887/history/bygameid',
@@ -40,7 +41,7 @@ Page({
         let v = res.data.list
         console.log("游戏记录查询", v);
         that.setData({
-          'dimension[0]': Number(v.timescore) + Number(v.score9),
+          'dimension[0]': Number(v.timescore)/2 + Number(v.score9),
           'dimension[1]': Number(v.score3) + Number(v.score4),
           'dimension[2]': Number(v.score7) + Number(v.score8),
           'dimension[3]': Number(v.score5) + Number(v.score6),

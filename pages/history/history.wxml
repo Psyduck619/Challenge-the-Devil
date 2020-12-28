@@ -1,4 +1,4 @@
-<scroll-view class="container flex-wrap" style="background-image:url(../../../../images_y/background.png)">
+<scroll-view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
 	<view class="null" wx:if="{{!hasInfo}}">
 		<text>无游戏记录</text>
 	</view>

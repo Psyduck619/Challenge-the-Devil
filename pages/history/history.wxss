@@ -10,6 +10,12 @@ page{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.list-wrap{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
 .history-list, .null{
   height: 190rpx;
   width: 600rpx;
