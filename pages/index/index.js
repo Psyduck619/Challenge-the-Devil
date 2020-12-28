@@ -145,8 +145,8 @@ Page({
     }, 1500)
   },
   onLoad: function () {
-    myaudio.src = "http://yuan619.xyz/music/bg_music.mp3"
-    myaudio.play()
+    // myaudio.src = "http://yuan619.xyz/music/bg_music.mp3"
+    // myaudio.play()
     this.auto()
     this.getOpenid()
     // 获取用户信息
