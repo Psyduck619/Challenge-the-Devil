@@ -67,10 +67,12 @@
 }
 
 #showproblem {
-  height: 73vw;
-  width: 100vw;
-  background-size: cover;
-  background-image: url('http://yuan619.xyz/xy/award_background.png');
+  height: 70vw;
+  width: 90vw;
+  border-radius: 5%;
+  opacity: 0.9;
+  background-size: cover ;
+  background-image: url('http://yuan619.xyz/xy/award_background11.png');
   display: flex;
   flex-direction: column;
   padding: 2%;
@@ -86,6 +88,11 @@
   font-size: 45rpx;
   font-weight: 600;
   width: 70vw;
+  height: 45vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 3vw;
   margin-left: 5vw;
 }
 
@@ -94,7 +101,7 @@
   flex-direction: row;
   height: 200px;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 25px;
   align-items: center;
   border-radius: 5%;
 
@@ -123,13 +130,15 @@
 
 #lefttime {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 50%;
-  height: 30px;
-  font-size: 30rpx;
-  background-color: rgb(179, 248, 252);
+  height: 55px;
+  font-size: 35rpx;
+  background-color: rgb(221, 228, 232);
   border-radius: 10px;
+  border: solid skyblue 3px;
 }
 
 
@@ -219,10 +228,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 3vw;
   width: 50%;
   height: 30px;
   font-size: 30rpx;
-  background-color: rgb(202, 228, 227);
+  background-color: rgb(245, 160, 163);
+  border: solid rgb(221, 107, 139) 1px;
   border-radius: 10px;
 }
 

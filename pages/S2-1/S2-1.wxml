@@ -13,7 +13,9 @@
     style="background-image:url({{question[(questionnum*3)+random].question}});">
   </view>
   <view id="{{isPage2?'number':'hidden'}}">
-    记住咒语!!!
+  <view>记住咒语后赶紧点下方按钮</view>
+  <view>⇩⇩⇩⇩</view>
+    
   </view>
   <view id="{{isPage2?'begin':'hidden'}}" bindtap="startGame">
     <text class="button">开始还原</text>

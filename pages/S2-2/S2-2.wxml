@@ -15,8 +15,12 @@
       {{question[(questionnum*2)+random].problem1}}
     </view>
   </view>
+  <view id="{{isPage2?'lefttime':'hidden'}}" bindtap="speedup">
+    <view>20秒倒计时: {{second}}s</view>
+    <view style="font-size:35rpx; color:rgb(119, 64, 12); font-weight:600">点击提前结束</view>
+  </view>
   <view id="{{isPage2?'showproblem':'hidden'}}">
-    <view id="award">
+    <view id="award" >
       <view id="treasure">
         <image style="width: 130px; height: 130px;" src="http://yuan619.xyz/xy/treasure.png" mode="aspectFit"></image>
       </view>
@@ -26,24 +30,22 @@
       </view>
     </view>
   </view>
-  <view id="{{isPage2?'lefttime':'hidden'}}" bindtap="speedup">
-    20秒倒计时: {{second}}s(轻点跳过)
-  </view>
   <!--问题界面-->
   <view id="{{isPage3?'showproblem2':'hidden'}}">
+    
     <view id="question">问题: </view>
     <view id="question">{{question[(questionnum*2)+random].problem2}}</view>
   </view>
   <view id="{{isPage3?'showAnswer':'hidden'}}">
+    <view id="lefttime1">
+      20秒倒计时: {{second}}s
+    </view>
     <view wx:for="{{question[(questionnum*2)+random].answer}}" wx:for-item="item" wx:for-index="i" wx:key="*this"
       data-index="{{i}}" bindtap="selectAnswer">
       <view wx:if="{{selectIndex[i]==0}}" class="answer">{{item}}</view>
       <view wx:if="{{selectIndex[i]==1}}" class="answer_select">{{item}}</view>
     </view>
-    <view id="speedup" bindtap="speedup">确定</view>
-    <view id="lefttime1">
-      20秒倒计时: {{second}}s
-    </view>
+    <view id="begin" bindtap="speedup"><text class="button">确定</text></view>
   </view>
   <!-- 过关提示 -->
   <!-- 回答正确 -->
