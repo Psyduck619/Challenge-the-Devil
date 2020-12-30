@@ -3,6 +3,9 @@ Page({
   data: {
 
   },
+  onShow: function () {
+    console.log(app.globalData.level)
+  },
   game1:function () {
     app.globalData.practice = true
     console.log(app.globalData.practice)

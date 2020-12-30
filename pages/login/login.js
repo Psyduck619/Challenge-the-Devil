@@ -68,7 +68,7 @@ Page({
       method: "POST",
       data: {
         openid: app.globalData.openid,
-        name: app.globalData.nickName
+        name: app.globalData.userInfo.nickName
       },
       success: function (res) {
         console.log(res)

@@ -96,33 +96,10 @@ Page({
       }
     }.bind(this), 1000);
     //上传用户信息
+  },
+  onShow: function () {
     setTimeout(() => {
       console.log(app.globalData.openid)
-      wx.request({
-        url: 'https://www.yuan619.xyz:8887/user/upUserinfo',
-        header: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        },
-        method: "POST",
-        data: {
-          openid: app.globalData.openid,
-          name: app.globalData.userInfo.nickName
-        },
-        success: function (res) {
-          console.log(res)
-          if (res.data.code == 200) {
-            if (res.data.result == "登录成功") {
-              console.log("用户数据上传成功!")
-            }
-          }
-        },
-        fail: function (res) {
-          console.log(res)
-          if (res.data.result == "no") {
-            console.log("用户数据上传失败!")
-          }
-        }
-      })
       wx.request({
         url: 'https://www.yuan619.xyz:8887/user/byopenid',
         header: {
@@ -133,8 +110,11 @@ Page({
           openid: app.globalData.openid
         },
         success: function (res) {
-          if(res.data.list.age >= 11){
+          let a = Number(res.data.list.age)
+          if(a >= 8){
             app.globalData.level = 2
+          } else {
+            app.globalData.level = 1
           }
           console.log(res)
         },

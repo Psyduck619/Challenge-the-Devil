@@ -42,7 +42,7 @@ Page({
       }
     })
     app.globalData.sex = this.data.sex
-    if(this.data.sex >= 11){
+    if(this.data.age >= 8){
       app.globalData.level = 2
     } else {
       app.globalData.level = 1
