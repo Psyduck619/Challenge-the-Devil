@@ -1,7 +1,7 @@
 <view class="container wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
 	<view class="s">
 		<view class="name">
-			<text class="question">亲爱的魔法师:</text>
+			<text class="question">魔法师，你终于来了</text>
 			<text class="text2">1.请问你的名字是?</text>
 			<input type="text" placeholder="请输入姓名..." value="{{name}}" bindinput="nameInput"></input>
 		</view>

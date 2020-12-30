@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "background": "/component/background/background"
-  }
+  },
+  "navigationBarTitleText": "整顿装备"
 }

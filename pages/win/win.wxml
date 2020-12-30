@@ -1,6 +1,6 @@
 <view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
   <view class="top flex-wrap">
-    <view class="kid" style="background-image:url(http://yuan619.xyz/lsq/magic_kid2.png);background-position-x: {{personPosition}};"></view>
+    <view class="kid" style="background-image:url(http://yuan619.xyz/lsq/magic_kid_win.png);background-position-x: {{personPosition}};"></view>
     <view class="title" style="background-image:url(http://yuan619.xyz/lsq/success.png)"></view>
   </view>
   <text class="score">*你的得分:</text>

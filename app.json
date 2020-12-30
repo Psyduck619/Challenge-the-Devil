@@ -56,7 +56,7 @@
         "selectedIconPath": "images_y/tabBar/game_focus.png"
       },
       {
-        "text": "练习",
+        "text": "训练",
         "pagePath": "pages/practice/practice",
         "iconPath": "images_y/tabBar/practice.png",
         "selectedIconPath": "images_y/tabBar/practice_focus.png"

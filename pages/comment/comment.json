@@ -2,5 +2,5 @@
   "usingComponents": {
     "radar-canvas": "../../component/radar-canvas/radar-canvas"
   },
-  "navigationBarTitleText": "能力值"
+  "navigationBarTitleText": "PASS模型"
 }

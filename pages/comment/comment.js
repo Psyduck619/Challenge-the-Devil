@@ -5,7 +5,7 @@ Page({
       canvasWidth: 392*1.05,
       canvasHeight: 366*0.9,
       fontSize: 46,
-      categories: ['综合', '注意力', '继时性', '同时性', '计划力'],
+      categories: ['综合', '注意', '继时性', '同时性', '计划'],
       MaxDimension: 100
     },
     currentPetNumber: 'm000225',
@@ -61,7 +61,7 @@ Page({
       this.setData({radarData});
       const {gender, id, radarList} = this.data.radarData;
       console.log(gender, id, radarList);
-    },200)
+    },1500)
   },
   returnRadarData(dimension) {
       const petNumber = this.data.currentPetNumber;

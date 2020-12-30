@@ -15,10 +15,10 @@ page{
 }
 .s{
   width: 80%;
-  height: 69%;
+  /* height: 69%; */
   margin-top: 40rpx;
   padding-top: 20rpx;
-  padding-bottom: 80rpx;
+  padding-bottom: 30rpx;
   display: flex;
   flex-direction: column;
   justify-content: start;
