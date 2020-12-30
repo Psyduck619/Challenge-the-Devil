@@ -42,6 +42,11 @@ Page({
       }
     })
     app.globalData.sex = this.data.sex
+    if(this.data.sex >= 11){
+      app.globalData.level = 2
+    } else {
+      app.globalData.level = 1
+    }
     wx.showToast({
       title: '保存成功!',
       icon: 'success',

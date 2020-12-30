@@ -77,7 +77,7 @@ App({
     //index
     userInfo: null,
     oepnid: null,
-    nickName: null,
+    nickName: '',
     gameId: 9,
     gameInfo: null,
     sex: 2,

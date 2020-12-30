@@ -44,6 +44,11 @@ Page({
       }
     })
     app.globalData.sex = this.data.sex
+    if(this.data.sex >= 11){
+      app.globalData.level = 2
+    } else {
+      app.globalData.level = 1
+    }
     //初始化游戏历史数据
     wx.request({
       url: 'https://www.yuan619.xyz:8887/history/upinfo',

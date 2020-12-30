@@ -18,7 +18,7 @@ page{
   height: 400rpx;
 }
 .container .btn{
-  width: 65%;
+  width: 75%;
   height: 80rpx;
   text-align: center;
   margin: 0 auto;

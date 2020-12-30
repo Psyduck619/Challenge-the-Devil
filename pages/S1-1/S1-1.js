@@ -32,6 +32,7 @@ Page({
     console.log(this.getquestionid())
     var question
     var number
+
     if (getApp().globalData.level == 1) {
       this.setData({
         imgnumber: 4,

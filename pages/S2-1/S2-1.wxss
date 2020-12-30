@@ -72,11 +72,11 @@
 
   0%,
   100% {
-    transform: scale(0.85);
+    transform: scale(1);
   }
 
   50% {
-    transform: scale(0.95);
+    transform: scale(1.1);
   }
 }
 
@@ -89,6 +89,7 @@
   justify-content: center;
   align-items: center;
   transform-origin: bottom center;
+  animation: shadow 1.5s linear infinite;
 }
 
 #start{
@@ -217,8 +218,8 @@
 
 .imglist-nineimg-image-yes {
   font-size: 20px;
-  height: 80px;
-  width: 80px;
+  height: 76px;
+  width: 76px;
   margin: 2px;
   border-radius: 15px;
   display: flex;
@@ -230,9 +231,9 @@
 
 .imglist-nineimg-image-no {
   font-size: 20px;
-  height: 80px;
-  width: 80px;
-  margin: 2px;
+  height: 76px;
+  width: 76px;
+  margin: 1px;
   border-radius: 15px;
   display: flex;
   align-items: center;
@@ -256,8 +257,8 @@
 
 .imglist-fourimg-image-yes {
   font-size: 20px;
-  height: 120px;
-  width: 120px;
+  height: 116px;
+  width: 116px;
   margin: 2px;
   border-radius: 15px;
   display: flex;
@@ -269,8 +270,8 @@
 
 .imglist-fourimg-image-no {
   font-size: 20px;
-  height: 120px;
-  width: 120px;
+  height: 116px;
+  width: 116px;
   margin: 1px;
   border-radius: 15px;
   display: flex;

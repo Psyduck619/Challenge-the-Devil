@@ -75,7 +75,6 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    background-size: cover;
     flex-direction: column;
 }
 
@@ -121,6 +120,8 @@
   .tips .zhengwen2 .tnt{
    font-size: 32rpx;
     font-weight: 700;
+    margin: 0 auto;
+    text-align: center;
   }
   .tips .ok{
     border: rgb(119, 64, 12) solid 3px;
