@@ -3,6 +3,7 @@ const myaudio = wx.createInnerAudioContext()
 
 Page({
   data: {
+    click: false,
     on: true,
     animationMiddleHeaderItem: null,
   },
@@ -16,6 +17,9 @@ Page({
   },
   //游戏开始跳转
   bindstart: function () {
+    this.setData({
+      click: true
+    })
     wx.redirectTo({
       url: '../../pages/select/select',
     })

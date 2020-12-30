@@ -8,6 +8,7 @@
     <text class="text2">挑战大魔王</text> -->
   </view>
   <view class="start" bindtap="bindstart" animation="{{animationMiddleHeaderItem}}">
+    <!-- <button class="button" style="background-color:{{click?'rgb(254, 232, 184)':'rgb(236, 236, 198)'}}">开始游戏</button> -->
     <button class="button">开始游戏</button>
   </view>
 </view>
