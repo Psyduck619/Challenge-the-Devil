@@ -2,7 +2,7 @@
   <!-- 游戏教程页 -->
   <image id="title" src="http://yuan619.xyz/teach.png"></image>
   <view id="text">
-    <image src="http://yuan619.xyz/lcy/gamedemo.gif"></image>
+    <image src="http://yuan619.xyz/lcy11.gif"></image>
   </view>
   <view id="begin" bindtap="startGame">
   开始

@@ -17,7 +17,7 @@ Page({
     isPage5: false,
     selectIndex: [0,0,0,0], //每个选项的选择状态
     index:-1,//选中选项的下标
-    age: getApp().globalData.level==1?0:1, //0为低年龄段,1为高年龄段
+    age: 0, //0为低年龄段,1为高年龄段
     questionnum: -1, //题号
     score: 100, //分数
     timecount: "0:00", //计时器文字
@@ -34,9 +34,11 @@ Page({
     this.setData({
       practice: getApp().globalData.practice
     })
-    var question = questionInfo.postList //为什么要加postList?
-    if (this.data.age == 1) {
+    var question
+    if (getApp().globalData.level==2) {
       question = questionInfo1.postList
+    }else{
+      question = questionInfo.postList
     }
     this.setData({
       question: question,
@@ -221,6 +223,18 @@ Page({
     }
   },
   onShow: function () {
-    wx.hideHomeButton()
+    wx.hideHomeButton(),
+    this.setData({
+      practice: getApp().globalData.practice
+    })
+    var question
+    if (getApp().globalData.level==2) {
+      question = questionInfo1.postList
+    }else{
+      question = questionInfo.postList
+    }
+    this.setData({
+      question: question,
+    })
       },
 })

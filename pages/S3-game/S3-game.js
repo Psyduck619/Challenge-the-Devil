@@ -58,7 +58,7 @@ Page({
     firstX: -1,        // 点击的第一张卡牌的坐标 
     firstY: -1,
     cards: [],        // 随机挑选出来的牌   
-    size: getApp().globalData.level==1?6:8,        // 界面显示的牌数=size*2，高难度的话就8，显示是4x4；低难度的话就是6，显示是3x4，然后如果改变难度的话，记得同步改变下面的几分函数
+    size: 0,        // 界面显示的牌数=size*2，高难度的话就8，显示是4x4；低难度的话就是6，显示是3x4，然后如果改变难度的话，记得同步改变下面的几分函数
     clickable: false,    // 当前是否可点击
     timer: '' ,       // 游戏计时的定时器
     fenshu: 30
@@ -237,9 +237,20 @@ Page({
   }
   , "disableScroll": true,
   onLoad: function () {
-    this.setData({practice:app.globalData.practice});
+    if(getApp().globalData.level==1){
+      this.setData({
+        size:6
+      });
+    } else{
+      this.setData({
+        size:8
+      });
+    }
+    this.setData({
+      practice:app.globalData.practice,
+    });
     this.startGame();
-    console.log(this.data.cards);
+    console.log(getApp().globalData.level);
   },
   confirm: function () {
     wx.navigateTo({
@@ -254,7 +265,19 @@ Page({
   },
   onShow: function () {
     wx.hideHomeButton()
-    console.log("onShow");
+    console.log("onShow1");
+    if(getApp().globalData.level==1){
+      this.setData({
+        size:6
+      });
+    } else{
+      this.setData({
+        size:8
+      });
+    }
+    this.setData({
+      practice:app.globalData.practice,
+    });
     if (this.data.checked == this.data.size)
       this.startGame()
   },

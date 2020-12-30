@@ -14,6 +14,7 @@ page{
 }
 .s{
   width: 100%;
+  height: 35%;
   padding-top: 20rpx;
   display: flex;
   flex-direction: column;

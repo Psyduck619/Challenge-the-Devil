@@ -14,14 +14,14 @@
     </view>
   </view>
   <view class="block block3">
-    <text class="title">寻找魔王(同时性加工训练)</text>
+    <text class="title">寻找魔王(同时性编码训练)</text>
     <view class="game">
       <button class="button" bindtap="game5">言语加工</button>
       <button class="button" bindtap="game6">图形记忆</button>
     </view>
   </view>
   <view class="block block4">
-    <text class="title">大战魔王(继时性加工训练)</text>
+    <text class="title">大战魔王(继时性编码训练)</text>
     <view class="game">
       <button class="button" bindtap="game7">字词回忆</button>
       <button class="button" bindtap="game8">句子问题</button>

@@ -17,7 +17,6 @@ Page({
       0, 0, 0,
       0, 0, 0
     ], //每个色块的选择下标
-    age: getApp().globalData.level==1?0:1, //0为低年龄段,1为高年龄段
     selectid: -1, //选中图片的index
     imgnumber: 4, //该题目是2*2还是3*3
     numberid: 0, //控制看题倒计时
@@ -43,7 +42,9 @@ Page({
 
   onLoad: function () {
     var question = questionInfo.postList //为什么要加postList?
-    if (this.data.age == 1) {
+    if (getApp().globalData.level == 1) {
+      question = questionInfo1.postList
+    }else{
       question = questionInfo1.postList
     }
     this.setData({
@@ -55,7 +56,7 @@ Page({
   //初始化
   init: function () {
     let imgnumber = this.data.imgnumber
-    if (this.data.age == 1) {
+    if (getApp().globalData.level==2) {
       imgnumber = 9
     } else {
       imgnumber = 4
@@ -76,6 +77,15 @@ Page({
   },
   //隐藏主页
   onShow: function () {
+    var question = questionInfo.postList //为什么要加postList?
+    if (getApp().globalData.level == 1) {
+      question = questionInfo.postList
+    }else{
+      question = questionInfo1.postList
+    }
+    this.setData({
+      question: question,
+    }),
     wx.hideHomeButton()
   },
   //开始

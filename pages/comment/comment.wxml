@@ -1,8 +1,6 @@
 <scroll-view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
 	<view class="radar">
 		<!-- <template is="radar"  data="{{radarData: radarData}}"/> -->
-		<text class="introduce" encode>祝贺你完成一次智力PASS模型的测试。PASS模型由“计划－注意－同时性加工－继时性加工”四个认知过程构成，是一种认知评价模型。下面是你本次测试的得分及相应分析。</text>
-		<text class="ps">(各项能力均可通过训练来提高)</text>
 		<view class="charts-radar">
 			<block wx:if="{{currentRadarImage}}">
 				<image class="radar-canvas-result" src="{{currentRadarImage}}"></image>
@@ -16,7 +14,7 @@
 		<view class="block block1">
 			<view class="title">
 				<image class="icon" src="http://yuan619.xyz/icon/attention.png"></image>
-				<text class="text">计划得分：{{dimension[4] + '/100'}}</text>
+				<text class="text">计划力得分：{{dimension[4] + '/100'}}</text>
 			</view>
 			<view class="text-wrap">
 				<text class="text">{{content[0]}}</text>
@@ -25,7 +23,7 @@
 		<view class="block block2">
 			<view class="title">
 				<image class="icon plan" src="http://yuan619.xyz/icon/plan.png"></image>
-				<text class="text">注意得分：{{dimension[1] + '/100'}}</text>
+				<text class="text">注意力得分：{{dimension[1] + '/100'}}</text>
 			</view>
 			<view class="text-wrap">
 				<text class="text">{{content[1]}}</text>
@@ -34,7 +32,7 @@
 		<view class="block block3">
 			<view class="title">
 				<image class="icon" src="http://yuan619.xyz/icon/hourglass.png"></image>
-				<text class="text">同时性加工得分：{{dimension[3] + '/100'}}</text>
+				<text class="text">同时性编码得分：{{dimension[3] + '/100'}}</text>
 			</view>
 			<view class="text-wrap">
 				<text class="text">{{content[2]}}</text>
@@ -43,7 +41,7 @@
 		<view class="block block4">
 			<view class="title">
 				<image class="icon" src="http://yuan619.xyz/icon/time.png"></image>
-				<text class="text">继时性加工得分：{{dimension[2] + '/100'}}</text>
+				<text class="text">继时性编码得分：{{dimension[2] + '/100'}}</text>
 			</view>
 			<view class="text-wrap">
 				<text class="text">{{content[3]}}</text>

@@ -21,15 +21,6 @@ page{
   justify-content: start;
   align-items: center;
 }
-.radar .introduce{
-  padding: 20rpx;
-  font-size: 28rpx;
-}
-.radar .ps{
-  color: #BBBBBE;
-  margin-bottom: 20rpx;
-  font-size: 24rpx;
-}
 .radar .tip{
   color: #BBBBBE;
   margin-bottom: 20rpx;
@@ -62,7 +53,7 @@ page{
   line-height: 60rpx;
 }
 .block .text-wrap .text{
-  font-size: 28rpx;
+  font-size: 26rpx;
   line-height: 36rpx;
 }
 .block .icon{
