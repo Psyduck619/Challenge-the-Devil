@@ -49,7 +49,7 @@
   </view>
   <!-- 过关提示 -->
   <!-- 回答正确 -->
-  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==1&&questionnum!=4}}">
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==1&&questionnum!=5}}">
     <view class="title">
       <view class="txt">答对啦！</view>
     </view>
@@ -65,7 +65,7 @@
     <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
   </view>
   <!-- 回答错误 -->
-  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==0&&questionnum!=4}}">
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==0&&questionnum!=5}}">
     <view class="title">
       <view class="txt">回答错误</view>
     </view>
@@ -81,16 +81,17 @@
     <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
   </view>
   <!-- 完成关卡 -->
-  <view class="tips1" wx:if="{{isPage4&&questionnum==4}}">
+  <view class="tips1" wx:if="{{isPage4&&questionnum==5}}">
     <view class="title">
       <view class="txt" wx:if="{{practice==false}}">恭喜通关</view>
       <view class="txt" wx:if="{{practice==true}}">练习完成</view>
     </view>
     <view class="zhengwen3">
       <view class="pass" wx:if="{{practice==false}}">恭喜你通关了国王的考验</view>
+      <view class="pass" wx:if="{{practice==false}}">你成功通关了所有关卡</view>
       <view class="pass" wx:if="{{practice==true}}">你的分数为：{{score}}</view>
     </view>
-    <view class="ok" bindtap="jumpBtn">
+    <view class="ok" bindtap="toWin">
       <view class="button1">确定</view>
     </view>
   </view>

@@ -77,6 +77,12 @@ Page({
       })
       init = setInterval(this.timer1, 10);
     }else{
+      this.setData({
+        questionnum:questionnum
+      })
+    }
+  },
+  toWin(){
       if(getApp().globalData.practice == true){
         wx.switchTab({
           url: '/pages/practice/practice',
@@ -124,7 +130,7 @@ Page({
           })
         }, 1000)
       }
-    }
+    
   },
   //倒计时1
   timer1: function () {
