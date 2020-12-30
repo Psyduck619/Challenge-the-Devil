@@ -3,7 +3,7 @@
   <!-- 游戏教程页 -->
   <image id="{{isPage1?'title':'hidden'}}" src="http://yuan619.xyz/teach.png"></image>
   <view id="{{isPage1?'text':'hidden'}}">
-    <image src="http://yuan619.xyz/pjh/GIF1.gif"></image>
+    <image src="http://yuan619.xyz/xy1.gif"></image>
   </view>
   <view id="{{isPage1?'begin':'hidden'}}" bindtap="jumpBtn">
     <text class="button">开始</text>
