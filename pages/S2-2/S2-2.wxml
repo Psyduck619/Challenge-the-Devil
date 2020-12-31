@@ -16,7 +16,7 @@
     </view>
   </view>
   <view id="{{isPage2?'lefttime':'hidden'}}" bindtap="speedup">
-    <view>20秒倒计时: {{second}}s</view>
+    <view>10秒倒计时: {{second}}s</view>
     <view style="font-size:35rpx; color:rgb(119, 64, 12); font-weight:600">点击提前结束</view>
   </view>
   <view id="{{isPage2?'showproblem':'hidden'}}">
@@ -32,13 +32,12 @@
   </view>
   <!--问题界面-->
   <view id="{{isPage3?'showproblem2':'hidden'}}">
-    
     <view id="question">问题: </view>
     <view id="question">{{question[(questionnum*2)+random].problem2}}</view>
   </view>
   <view id="{{isPage3?'showAnswer':'hidden'}}">
     <view id="lefttime1">
-      20秒倒计时: {{second}}s
+      10秒倒计时: {{second}}s
     </view>
     <view wx:for="{{question[(questionnum*2)+random].answer}}" wx:for-item="item" wx:for-index="i" wx:key="*this"
       data-index="{{i}}" bindtap="selectAnswer">

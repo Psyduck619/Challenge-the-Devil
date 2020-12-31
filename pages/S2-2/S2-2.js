@@ -147,7 +147,7 @@ Page({
         second: this.data.second + 1
       })
     }
-    if (this.data.second == 20) {
+    if (this.data.second == 10) {
       this.setData({
         second: 0,
         millisecond: 0,
@@ -164,7 +164,7 @@ Page({
   // 点击确定直接结束倒计时
   speedup: function () {
     this.setData({
-      second: 20
+      second: 10
     })
   },
   // 倒计时2
@@ -179,7 +179,7 @@ Page({
       })
     }
     //时间到了记录答题状态
-    if (this.data.second == 20) {
+    if (this.data.second == 10) {
       let random = this.data.random
       let questionnum = this.data.questionnum
       let rightIndex = this.data.question[(questionnum * 2) + random].rightIndex
