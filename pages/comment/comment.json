@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "radar-canvas": "../../component/radar-canvas/radar-canvas"
+    "ec-canvas": "../../ec-canvas/ec-canvas"
   },
   "navigationBarTitleText": "PASS模型"
 }

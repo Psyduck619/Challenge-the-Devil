@@ -1,15 +1,15 @@
 <scroll-view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
 	<view class="radar">
-		<!-- <template is="radar"  data="{{radarData: radarData}}"/> -->
 		<text class="introduce" encode>祝贺你完成一次智力PASS模型的测试。PASS模型由“计划－注意－同时性加工－继时性加工”四个认知过程构成，是一种认知评价模型。下面是你本次测试的得分及相应分析。</text>
-		<text class="ps">(各项能力均可通过训练来提高)</text>
-		<view class="charts-radar">
+		<text class="ps">(各项能力均可通过训练来提高)</text>		
+		<ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}" style="width:500rpx;height:455rpx;" force-use-old-canvas="true"></ec-canvas>
+		<!-- <view class="charts-radar">
 			<block wx:if="{{currentRadarImage}}">
 				<image class="radar-canvas-result" src="{{currentRadarImage}}"></image>
 			</block>
-		</view>
-		<radar-canvas aspect-canvas="{{aspectCanvas}}" radar-data="{{radarData}}" bindradarTap="radarUpdate">
-		</radar-canvas>
+		</view> -->
+		<!-- <radar-canvas aspect-canvas="{{aspectCanvas}}" radar-data="{{radarData}}" bindradarTap="radarUpdate">
+		</radar-canvas> -->
     <text class="tip" edcode>*综合能力受游戏整体完成速度影响</text>
 	</view>
 	<view class="s">

@@ -17,6 +17,10 @@ Page({
       this.setData({
         personPosition: 'right'
       })
+    } else {
+      this.setData({
+        personPosition: 'left'
+      })
     }
     wx.request({
       url: 'https://www.yuan619.xyz:8887/history/bygameid',

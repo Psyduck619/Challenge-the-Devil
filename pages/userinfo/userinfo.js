@@ -42,6 +42,7 @@ Page({
       }
     })
     app.globalData.sex = this.data.sex
+    console.log(app.globalData.sex)
     if(this.data.age >= 8){
       app.globalData.level = 2
     } else {

@@ -13,6 +13,7 @@ Page({
 
   getId:function(e) {
     app.globalData.gameId = e.currentTarget.dataset.id
+    console.log(app.globalData.gameId)
   },
   getInfo:function() {
     wx.navigateTo({

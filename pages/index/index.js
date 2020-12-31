@@ -115,11 +115,14 @@ Page({
         },
         success: function (res) {
           let a = Number(res.data.list.age)
+          let s = Number(res.data.list.sex)
           if(a >= 8){
             app.globalData.level = 2
           } else {
             app.globalData.level = 1
           }
+          app.globalData.age = a
+          app.globalData.sex = s
           console.log(res)
         },
         fail: function (res) {
