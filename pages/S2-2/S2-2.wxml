@@ -16,7 +16,7 @@
     </view>
   </view>
   <view id="{{isPage2?'lefttime':'hidden'}}" bindtap="speedup">
-    <view>20秒倒计时: {{second}}s</view>
+    <view>10秒倒计时: {{second}}s</view>
     <view style="font-size:35rpx; color:rgb(119, 64, 12); font-weight:600">点击提前结束</view>
   </view>
   <view id="{{isPage2?'showproblem':'hidden'}}">
@@ -32,13 +32,12 @@
   </view>
   <!--问题界面-->
   <view id="{{isPage3?'showproblem2':'hidden'}}">
-    
     <view id="question">问题: </view>
     <view id="question">{{question[(questionnum*2)+random].problem2}}</view>
   </view>
   <view id="{{isPage3?'showAnswer':'hidden'}}">
     <view id="lefttime1">
-      20秒倒计时: {{second}}s
+      10秒倒计时: {{second}}s
     </view>
     <view wx:for="{{question[(questionnum*2)+random].answer}}" wx:for-item="item" wx:for-index="i" wx:key="*this"
       data-index="{{i}}" bindtap="selectAnswer">
@@ -49,7 +48,7 @@
   </view>
   <!-- 过关提示 -->
   <!-- 回答正确 -->
-  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==1&&questionnum!=4}}">
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==1&&questionnum!=5}}">
     <view class="title">
       <view class="txt">答对啦！</view>
     </view>
@@ -65,7 +64,7 @@
     <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
   </view>
   <!-- 回答错误 -->
-  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==0&&questionnum!=4}}">
+  <view class="tips" wx:if="{{isPage4&&ifAnswerRight==0&&questionnum!=5}}">
     <view class="title">
       <view class="txt">回答错误</view>
     </view>
@@ -81,16 +80,17 @@
     <view class="ok" bindtap="jumpBtn"><text class="button1">下一关</text></view>
   </view>
   <!-- 完成关卡 -->
-  <view class="tips1" wx:if="{{isPage4&&questionnum==4}}">
+  <view class="tips1" wx:if="{{isPage4&&questionnum==5}}">
     <view class="title">
       <view class="txt" wx:if="{{practice==false}}">恭喜通关</view>
       <view class="txt" wx:if="{{practice==true}}">练习完成</view>
     </view>
     <view class="zhengwen3">
       <view class="pass" wx:if="{{practice==false}}">恭喜你通关了国王的考验</view>
+      <view class="pass" wx:if="{{practice==false}}">你成功通关了所有关卡</view>
       <view class="pass" wx:if="{{practice==true}}">你的分数为：{{score}}</view>
     </view>
-    <view class="ok" bindtap="jumpBtn">
+    <view class="ok" bindtap="toWin">
       <view class="button1">确定</view>
     </view>
   </view>

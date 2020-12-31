@@ -130,6 +130,7 @@ Page({
     that.data.time = setInterval(function () {
       j = j + 1;
       if (j == 10) {
+        
         var isPage4 = that.data.isPage4;
         isPage4 = true;
         var ifAnswerRight = that.data.ifAnswerRight;
@@ -142,6 +143,10 @@ Page({
           ifAnswerRight: ifAnswerRight,
           k: k
         })
+        // if(k==6){
+        //   var that=this;
+        //   that.nextgame();
+        // }
         clearInterval(that.data.time)
       } else {
         animation()
@@ -291,8 +296,55 @@ Page({
           k: k
         })
       }
+      if(that.data.k==6){
+        var that=this
+       var score=60+this.data.scole*8
+       this.setData({
+         scole:score/2
+       })
+       console.log(this.data.scole,"分")
+       setTimeout(() =>{
+        that.setData({
+          showDialog: !that.data.showDialog
+        })
+      }, 500) 
+         setTimeout(function () {
+           if(getApp().globalData.practice==false){
+            wx.request({
+              url: 'https://www.yuan619.xyz:8887/history/upscore6',
+              data: {
+                id: app.globalData.gameId,
+                score: that.data.scole,
+              },
+              method: 'POST',
+              header: {
+                "Content-Type": "application/x-www-form-urlencoded"
+              },
+              success: function (res) {
+                console.log(res.data);
+              },
+              fail: function (res) {
+                console.log("...fail...");
+              }
+            })
+             wx.redirectTo({
+               url: '/pages/S3-story/S3-story'
+             })
+           }
+           else if(getApp().globalData.practice==true){
+            console.log(that.data.scole)
+            wx.switchTab({
+              url: '/pages/practice/practice',
+            })
+           }
+           
+         },3500);
+      }
     }
-    if (that.data.k == 6) {
+
+  },
+
+  nextgame: function () {
       var that = this
       var score = 60 + this.data.scole * 8
       this.setData({
@@ -335,10 +387,5 @@ Page({
         }
 
       }, 1500);
-    }
-  },
-
-  nextgame: function () {
-
   }
 })
