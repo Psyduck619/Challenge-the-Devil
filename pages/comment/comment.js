@@ -61,7 +61,7 @@ Page({
       this.setData({radarData});
       const {gender, id, radarList} = this.data.radarData;
       console.log(gender, id, radarList);
-    },1500)
+    },2000)
   },
   returnRadarData(dimension) {
       const petNumber = this.data.currentPetNumber;

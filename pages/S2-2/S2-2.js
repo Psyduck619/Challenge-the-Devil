@@ -8,15 +8,19 @@ const app = getApp();
 Page({
   data: {
     practice: null,
-    oneButton:[{text:'下一关'}],
-    oneButton1:[{text:'完成'}],
+    oneButton: [{
+      text: '下一关'
+    }],
+    oneButton1: [{
+      text: '完成'
+    }],
     isPage1: true, //控制第一页的显示
     isPage2: false,
     isPage3: false,
     isPage4: false,
     isPage5: false,
-    selectIndex: [0,0,0,0], //每个选项的选择状态
-    index:-1,//选中选项的下标
+    selectIndex: [0, 0, 0, 0], //每个选项的选择状态
+    index: -1, //选中选项的下标
     age: 0, //0为低年龄段,1为高年龄段
     questionnum: -1, //题号
     score: 100, //分数
@@ -26,7 +30,7 @@ Page({
     question: [],
     time: null, //一个定时器名称
     ifAnswerRight: 1, //0为回答错误,1为回答正确
-    random:0
+    random: 0
   },
 
   //载入题目信息
@@ -35,9 +39,9 @@ Page({
       practice: getApp().globalData.practice
     })
     var question
-    if (getApp().globalData.level==2) {
+    if (getApp().globalData.level == 2) {
       question = questionInfo1.postList
-    }else{
+    } else {
       question = questionInfo.postList
     }
     this.setData({
@@ -48,13 +52,13 @@ Page({
   //开始
   jumpBtn: function () {
     let that = this
-    let random = parseInt(Math.random()*2)
+    let random = parseInt(Math.random() * 2)
     this.setData({
-      random:random
+      random: random
     })
     let questionnum = this.data.questionnum
     questionnum += 1
-    if(questionnum<5){
+    if (questionnum < 5) {
       let isPage1 = this.data.isPage1;
       let isPage2 = this.data.isPage2;
       let isPage4 = this.data.isPage4;
@@ -68,27 +72,19 @@ Page({
         isPage4: isPage4,
         questionnum: questionnum,
         //计时器清零
-        second:0,
-        millisecond:0,
+        second: 0,
+        millisecond: 0,
         //选择情况清零
-        index:-1,
-        selectIndex:[0,0,0,0],
-        ifAnswerRight:1
+        index: -1,
+        selectIndex: [0, 0, 0, 0],
+        ifAnswerRight: 1
       })
       init = setInterval(this.timer1, 10);
-    }else{
+    } else {
       this.setData({
-        questionnum:questionnum
+        questionnum: questionnum
       })
-    }
-  },
-  toWin(){
-      if(getApp().globalData.practice == true){
-        wx.switchTab({
-          url: '/pages/practice/practice',
-        })
-      }
-      else{
+      if (getApp().globalData.practice == false) {
         wx.request({
           url: 'https://www.yuan619.xyz:8887/history/upscore8',
           data: {
@@ -106,31 +102,39 @@ Page({
             console.log("...fail...");
           }
         })
-        setTimeout(() => {
-          wx.request({
-            url: 'https://www.yuan619.xyz:8887/history/upscore10',
-            data: {
-              id: app.globalData.gameId
-            },
-            method: 'POST',
-            header: {
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            success: function (res) {
-              console.log(res.data);
-            },
-            fail: function (res) {
-              console.log("...fail...");
-            }
-          })
-        }, 500)
-        setTimeout(() => {
-          wx.redirectTo({
-            url: '/pages/win/win'
-          })
-        }, 1000)
       }
-    
+
+    }
+  },
+  toWin() {
+    if (getApp().globalData.practice == true) {
+      wx.switchTab({
+        url: '/pages/practice/practice',
+      })
+    } else {
+      wx.request({
+        url: 'https://www.yuan619.xyz:8887/history/upscore10',
+        data: {
+          id: app.globalData.gameId
+        },
+        method: 'POST',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          console.log(res.data);
+        },
+        fail: function (res) {
+          console.log("...fail...");
+        }
+      })
+      setTimeout(() => {
+        wx.redirectTo({
+          url: '/pages/win/win'
+        })
+      }, 500)
+    }
+
   },
   //倒计时1
   timer1: function () {
@@ -143,24 +147,24 @@ Page({
         second: this.data.second + 1
       })
     }
-    if(this.data.second==20){
+    if (this.data.second == 20) {
       this.setData({
-        second:0,
-        millisecond:0,
-        isPage2:false,
-        isPage3:true
+        second: 0,
+        millisecond: 0,
+        isPage2: false,
+        isPage3: true
       })
       clearInterval(init)
-      init1=setInterval(this.timer2, 10);
+      init1 = setInterval(this.timer2, 10);
     }
     this.setData({
       timecount: this.data.second + ":" + (this.data.millisecond < 10 ? "0" + this.data.millisecond : this.data.millisecond),
     })
   },
   // 点击确定直接结束倒计时
-  speedup:function(){
+  speedup: function () {
     this.setData({
-      second:20
+      second: 20
     })
   },
   // 倒计时2
@@ -175,24 +179,24 @@ Page({
       })
     }
     //时间到了记录答题状态
-    if(this.data.second==20){
+    if (this.data.second == 20) {
       let random = this.data.random
-      let questionnum=this.data.questionnum
-      let rightIndex = this.data.question[(questionnum*2)+random].rightIndex
-      let punish = this.data.question[(questionnum*2)+random].punish
+      let questionnum = this.data.questionnum
+      let rightIndex = this.data.question[(questionnum * 2) + random].rightIndex
+      let punish = this.data.question[(questionnum * 2) + random].punish
       let score = this.data.score
       let ifAnswerRight = this.data.ifAnswerRight
-      if(rightIndex != this.data.index){
+      if (rightIndex != this.data.index) {
         ifAnswerRight = 0;
         score = score - punish;
       }
       this.setData({
-        second:0,
-        millisecond:0,
-        isPage3:false,
-        isPage4:true,
-        score:score,
-        ifAnswerRight:ifAnswerRight
+        second: 0,
+        millisecond: 0,
+        isPage3: false,
+        isPage4: true,
+        score: score,
+        ifAnswerRight: ifAnswerRight
       })
       clearInterval(init1)
     }
@@ -203,44 +207,44 @@ Page({
   //选择选项
   selectAnswer(option) {
     let index = option.currentTarget.dataset.index
-    if(index == 0){
+    if (index == 0) {
       this.setData({
-        selectIndex:[1,0,0,0],
-        index:index
+        selectIndex: [1, 0, 0, 0],
+        index: index
       })
     }
-    if(index == 1){
+    if (index == 1) {
       this.setData({
-        selectIndex:[0,1,0,0],
-        index:index
+        selectIndex: [0, 1, 0, 0],
+        index: index
       })
     }
-    if(index == 2){
+    if (index == 2) {
       this.setData({
-        selectIndex:[0,0,1,0],
-        index:index
+        selectIndex: [0, 0, 1, 0],
+        index: index
       })
     }
-    if(index == 3){
+    if (index == 3) {
       this.setData({
-        selectIndex:[0,0,0,1],
-        index:index
+        selectIndex: [0, 0, 0, 1],
+        index: index
       })
     }
   },
   onShow: function () {
     wx.hideHomeButton(),
-    this.setData({
-      practice: getApp().globalData.practice
-    })
+      this.setData({
+        practice: getApp().globalData.practice
+      })
     var question
-    if (getApp().globalData.level==2) {
+    if (getApp().globalData.level == 2) {
       question = questionInfo1.postList
-    }else{
+    } else {
       question = questionInfo.postList
     }
     this.setData({
       question: question,
     })
-      },
+  },
 })

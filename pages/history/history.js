@@ -37,20 +37,27 @@ Page({
         console.log(list2);
         let list3 = []
         for(let i = 0; i < list2.length; i++){
-          if(list2[i].score9 != 0){
+          if(list2[i].score8 != 0){
+            console.log(list2[i].score8)
             list3.push(list2[i])
+            // console.log(list3)
           }
         }
-        for(let i = 0; i < list3.length; i++){
-          list3[i].finishTime = list3[i].finishTime.substring(0, 
-            list3[i].finishTime.length - 10).replace('T', ' ')
+        for(let j = 0; j < list3.length; j++){
+          list3[j].finishTime = list3[j].finishTime.substring(0, 
+            list3[j].finishTime.length - 10).replace('T', ' ')
         }
         that.setData({
           list: list3
         })
-        if(list2){
+        console.log(list3.length)
+        if(list3.length >= 1){
           that.setData({
             hasInfo: true
+          })
+        } else {
+          that.setData({
+            hasInfo: false
           })
         }
       },

@@ -3,7 +3,7 @@
   <!-- 游戏教程页 -->
   <image id="title" src="http://yuan619.xyz/teach.png"></image>
   <view id="text">
-    <image src="http://yuan619.xyz/wjl/guide.gif"></image>
+    <image src="http://yuan619.xyz/wjl1.gif"></image>
   </view>
   <view id="begin"  bindtap="handleredirect"
   style="{{isFinished==false?'display:none':'display:block'}}">
