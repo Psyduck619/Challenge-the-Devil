@@ -7,15 +7,15 @@
     </view>
     <view class="right" style="background-image:url(http://yuan619.xyz/wjl/title.png)">
       <view class="name">
-        点击下面方格中的黑体斜体数字,他们会变绿哦
+        寻找大写字母与小写字母相同的单元格
       </view>
     </view>
   </view>
   <view class="content" style="background-image:url(http://yuan619.xyz/wjl/wood2.png)  ">
     <view class='row' wx:for="{{num}}" wx:for-item="row" wx:for-index="i" wx:key="index">
-      <view class='cell {{select[i][j]===1?"green":""}}' wx:for="{{row}}" wx:for-item="cell" wx:for-index="j"
+      <view class='cell {{select[i][j]===1?"green":""}}  {{select[i][j]===-1?"grey":""}} ' wx:for="{{row}}" wx:for-item="cell" wx:for-index="j"
         wx:key="index">
-        <view class='cell_con {{keynum[i][j]?"cell_bold":""}} ' bindtap="handletapview" data-row="{{i}}"
+        <view class='cell_con' bindtap="handletapview" data-row="{{i}}"
           data-col="{{j}}">
           {{cell}}
         </view>

@@ -25,7 +25,7 @@
     font-weight: bold;
     background-repeat: no-repeat;
     background-size: 100%;
-    padding-top: 120rpx;
+    padding: 120rpx 65rpx 0;
 }
 
 .pos {
@@ -66,16 +66,30 @@
     line-height: 80rpx;
 }
 
-.cell_bold {
-    font-weight: 900;
-    font-style: italic;
+.grey{
+    animation:turngrey 0.5s linear forwards; 
 }
-
 .green {
-    background-color: #7DE346;
-    color: #fff;
+    animation:turngreen 0.5s linear forwards; 
 }
+@keyframes turngreen{
+    0%{
 
+    }
+    100%{
+        background-color: #7DE346;
+        color: #fff;
+    }
+}
+@keyframes turngrey{
+    0%{
+
+    }
+    100%{
+        background-color: gray;
+      
+    }
+}
 .zan-dialog__mask {
     position: fixed;
     top: 0;

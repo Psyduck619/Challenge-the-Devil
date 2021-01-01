@@ -34,27 +34,27 @@ Page({
                 rightnum: 0
             },
             {
-                title: "文字'红色'下面是什么",
+                title: "文字'红色'后面是什么",
                 content: ["白色", "绿色", "黄色", "紫色"],
                 rightnum: 2
             },
             {
-                title: "文字'黄色'下面是什么",
+                title: "文字'黄色'后面是什么",
                 content: ["白色", "绿色", "黄色", "紫色"],
                 rightnum: 0
             },
             {
-                title: "文字'绿色'下面是什么",
+                title: "文字'绿色'后面是什么",
                 content: ["红色", "绿色", "白色", "黄色"],
                 rightnum: 3
             },
             {
-                title: "前面文字共描述了几种颜色",
+                title: "前面文字一共描述了几种颜色",
                 content: ["2", "3", "4", "5"],
                 rightnum: 1
             },
             {
-                title: "前面文字共描述了几种颜色",
+                title: "前面文字一共描述了几种颜色",
                 content: ["2", "3", "4", "5"],
                 rightnum: 2
             },
@@ -69,17 +69,17 @@ Page({
                 rightnum: 3
             },
             {
-                title: "倒数第二个方块的文字是什么",
+                title: "倒数第二个出现的文字是什么",
                 content: ["绿色", "黑色", "黄色", "红色", "白色"],
                 rightnum: 0
             },
             {
-                title: "倒数第三个方块的文字是什么",
+                title: "倒数第三个出现的文字是什么",
                 content: ["粉色", "黑色", "黄色", "红色", "白色"],
                 rightnum: 0
             },
             {
-                title: "倒数第四个方块的文字是什么",
+                title: "倒数第四个出现的文字是什么",
                 content: ["灰色", "黑色", "黄色", "红色", "白色"],
                 rightnum: 1
             }
@@ -107,8 +107,6 @@ Page({
         let time = app.globalData.time1
         let err = app.globalData.error
         let id = parseInt(options.id)
-        //屏幕上小人的移动
-        // let top = 180 + id * 130 + 'rpx'
         setInterval(this.timePass, 100);
         this.setData({
             currentPageId: id,
@@ -196,7 +194,6 @@ Page({
                 }
 
             }, 1500);
-
         }
         //继续跳向下一题
         else {

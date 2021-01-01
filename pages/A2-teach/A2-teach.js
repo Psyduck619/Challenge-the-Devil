@@ -8,22 +8,15 @@ Page({
      */
     data: {
         //题目矩阵
-        num:[[1, 2, 2, 2, 3, ],
-        [1, 2, 3, 1, 1, ],
-        [2, 3, 1, 1, 2, ],
-        [1, 2, 2, 1, 3, ],
-        [3, 2, 1, 2, 3, ],
-        [2, 3, 3, 3, 1, ],
+        num:[["Ae","Bb","Fs","Nq","Ws"],
+       ["Jj","Ns","Sb","Eo","Ra"],
+       ["Pl","Ad","Yy","Cc","Gt"],
+       ["Gh","Lc","Vi","Ym","Wa"],
+       ["Vh","Xq","Pp","Ml","Sx"],
+       ["Xd","Qb","Qz","Dd","Hs"],
         ],
-        //黑体矩阵
-        keynum:[ [0, 0, 1, 0, 1,],
-        [1, 1, 0, 0, 0, ],
-        [0, 0, 1, 0, 0, ],
-        [0, 0, 0, 1, 0, ],
-        [0, 0, 1, 0, 0, ],
-        [1, 0, 0, 0, 1, ],
-       ],
-   
+        //关键字数量
+        keynum:6,
         //已选择矩阵
         select:[[0, 0, 0, 0, 0, ],
         [0, 0, 0, 0, 0, ],
@@ -33,7 +26,6 @@ Page({
         [0, 0, 0, 0, 0, ],
      ],
         //需要选择的数量
-        BOLD_NUM:9,
         checkcnt: 0,
         hidden: false,
         over: false,
@@ -54,8 +46,9 @@ Page({
         let col = parseInt(e.target.dataset.col)
         let row = parseInt(e.target.dataset.row)
         let select=this.data.select;
-        if (this.data.keynum[row][col] === 1&&
-          select [row][col]===0) {
+        if (this.data.num[row][col].charAt(0).charCodeAt()+32 === 
+        this.data.num[row][col].charAt(1).charCodeAt()
+            && select [row][col]===0) {
             let arr = this.data.select;
             let n = this.data.checkcnt + 1;
             arr[row][col] = 1;
@@ -64,8 +57,19 @@ Page({
                 select: arr,
                 checkcnt: n
             })
+        } else {
+            //闪烁
+            let arr = this.data.select;
+            if(arr[row][col] ===0)
+                arr[row][col] = -1;
+            else if(arr[row][col] ===-1){
+                arr[row][col] = 0;
+            }
+            this.setData({
+                select: arr,
+            })
         }
-        if(this.data.checkcnt==this.data.BOLD_NUM)
+        if(this.data.checkcnt==this.data.keynum)
         {
             this.setData({
                 showDialog: !this.data.showDialog

@@ -35,7 +35,7 @@
 }
 
 .content {
-  margin: 100rpx auto 0;
+  margin: 320rpx auto 0;
   width: 600rpx;
   text-align: center;
   align-items: center;
@@ -44,15 +44,14 @@
 }
 
 .item {
-
-  width: 440rpx;
-  height: 108rpx;
-  line-height: 108rpx;
+  width: 500rpx;
+  height: 180rpx;
+  line-height: 180rpx;
   color: red;
-  font-size: 35px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 800;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: auto 100%;
 }
 
 .timer {
@@ -63,6 +62,13 @@
   right:100rpx;
   color: #001140;
   animation: swing 1s .15s linear infinite;
+}
+.per{
+  position: fixed;
+  bottom: 50rpx;
+  left: 10%;
+  width: 80%;
+  height: 20rpx;
 }
 
 @keyframes swing {

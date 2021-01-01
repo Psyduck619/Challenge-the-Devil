@@ -1,0 +1,27 @@
+<!--pages/exp/exp.wxml-->
+<image class="background" src="http://yuan619.xyz/wjl/main.jpg" mode="scaleToFill" />
+<view class="pos" >
+  <image class="avator" src="http://yuan619.xyz/wjl/tip.png" mode="widthFix" />
+</view>
+<view class="all">
+    <view class="name"
+    style="background-image:url(http://yuan619.xyz/wjl/title.png)  ">
+     文字会逐个出现,记住他们哦
+    </view>
+  <view class="content">
+    <view class="item" style="color:{{objt.color}};background-image:url(http://yuan619.xyz/wjl/wood.png">
+      {{objt.name}}
+    </view>
+  </view>
+
+  <progress class="per"  percent="{{percent}}" color="brown" />
+  <!-- <view class="begin" bindtap="handleredirect">
+    <text class="button">确定</text>
+</view> -->
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <view class="zan-dialog__mask" bindtap="toggleDialog" />
+    <view class="zan-dialog__container">
+      <view class="zan-text">开始正式游戏吧</view>
+    </view>
+  </view>
+</view>

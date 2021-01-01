@@ -11,9 +11,14 @@ Page({
   },
   //事件处理函数
   begin: function() {
-    wx.redirectTo({
-      url: '../A1-teach/A1-teach'
+    this.setData({
+      showDialog: !this.data.showDialog
     })
+    setTimeout(  function() {
+    wx.redirectTo({
+      url: '../A1-teach-question/A1-teach-question?id=0'
+    })}
+    ,2000)
   },
   onShow: function () {
     wx.hideHomeButton()
@@ -44,6 +49,34 @@ Page({
           })
         }
       })
+    }
+    this.generateQuestion();
+  },
+  generateQuestion() {
+    let age = app.globalData.age;
+    let old=app.globalData.old;
+    let young=app.globalData.young;
+    let num;
+    if (getApp().globalData.level==1) {
+      num = young
+    } else if(getApp().globalData.level==2){
+      num = old
+    }
+    let k = 0;
+    let set = new Set();
+    let level2 = app.globalData.level2;
+    while (true) {
+      let id = level2[num[k]-1][Math.floor(Math.random() * level2[num[k]-1].length)];
+      while (set.has(id)) 
+      {
+        id = level2[num[k]-1][Math.floor(Math.random() * level2[num[k]-1].length)];
+      }
+      app.globalData.current[k] = id;
+      set.add(id);
+      k++;
+      if (k == 6) {
+        break;
+      }
     }
   },
   getUserInfo: function(e) {

@@ -1,8 +1,6 @@
 // pages/exp/exp.js
 /*
 
-
-
 **/
 const app = getApp();
 Page({
@@ -37,10 +35,10 @@ Page({
             {
                 content: [{
                     name: '白色',
-                    color: 'red'
+                    color: 'pink'
                 }, {
                     name: '紫色',
-                    color: 'yellow'
+                    color: 'green'
                 }, {
                     name: '蓝色',
                     color: 'black'
@@ -51,13 +49,13 @@ Page({
             {
                 content: [{
                     name: '灰色',
-                    color: 'red'
+                    color: 'white'
                 }, {
                     name: '白色',
-                    color: 'yellow'
+                    color: 'blue'
                 }, {
                     name: '蓝色',
-                    color: 'black'
+                    color: 'green'
                 }],
                 margin_bottom: '120rpx',
                 level2:2
@@ -65,15 +63,15 @@ Page({
             {
                 content: [{
                     name: '橙色',
-                    color: 'red'
+                    color: 'brown'
                 }, 
                 {
                     name: '灰色',
-                    color: 'yellow'
+                    color: 'wheat'
                 }, 
                 {
                     name: '绿色',
-                    color: 'black'
+                    color: 'blue'
                 }],
                 margin_bottom: '120rpx',
                 level2:2
@@ -114,7 +112,7 @@ Page({
                     },
                     {
                         name: '白色',
-                        color: 'purple'
+                        color: 'pink'
                     },
                 ],
                 margin_bottom: '70rpx',
@@ -333,7 +331,7 @@ Page({
         //页面布置记录
         time: 5,            //倒计时
         currentPageId: 0,
-        // top:'180rpx',
+        
         title:["第一题","第二题","第三题","第四题","第五题","第六题"],
         //答题信息记录
         timer:0,
@@ -341,7 +339,9 @@ Page({
         
          // 进入游戏根据年龄随机生成的题库,记录题目id
          current:[],
-        
+         tid:0,
+         objt:{},
+         percent:0
     },
 
     /**
@@ -349,27 +349,41 @@ Page({
      */
     decreaseTime() {
         let time = this.data.time - 1;
+        let p=this.data.percent+16.67;
         this.setData({
-            time
+            time,
+            percent:p
         })
+    },
+    changeQuestion()
+    {
+        let tid=this.data.tid+1;
+        let t=this.data.puzzle[this.data.current[this.data.currentPageId]-1].content[tid];
+        if(t!=undefined){
+            this.setData({
+                objt:t,
+                tid:tid
+            })
+        }
     },
     onLoad: function (options) {
         let time= app.globalData.time1
         let err=app.globalData.error
         console.log("总共耗时"+time)
         console.log("总共错误次数"+err)
-       let tid=parseInt(options.id)
-       //屏幕上小人的移动
-    //    let top=180+tid*130+'rpx'
+        let tid=parseInt(options.id)
+        let obj=this.data.puzzle[app.globalData.current[tid]-1].content[this.data.tid];
         this.setData({
             currentPageId: tid,
             timer:time,
             errorTime:err,
-            // top:top,
+            objt:obj,
             current:app.globalData.current
         })
+        let interval=5000/(this.data.puzzle[this.data.current[tid]-1].content.length);
         console.log(this.data.current)
         setInterval(this.decreaseTime, 1000);
+        setInterval(this.changeQuestion,interval);
         let id = this.data.currentPageId;
         let that=this;
         setTimeout(function () {

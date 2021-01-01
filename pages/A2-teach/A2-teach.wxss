@@ -48,6 +48,7 @@
     width: 100vw;
     height: 580rpx;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 /* 8*6样式  150*80 */
@@ -63,21 +64,29 @@
     line-height: 80rpx;
 }
 
-.cell_bold {
-    font-weight: 900;
-    font-style: italic;
+
+.grey{
+    animation:turngrey 0.5s linear forwards; 
+}
+.green {
+    animation:turngreen 0.5s linear forwards; 
 }
 
-.green {
-    animation:turn 0.5s linear forwards; 
-}
-@keyframes turn{
+@keyframes turngreen{
     0%{
 
     }
     100%{
         background-color: #7DE346;
         color: #fff;
+    }
+}
+@keyframes turngrey{
+    0%{
+
+    }
+    100%{
+        background-color: gray;
     }
 }
 .begin {

@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/login/login",
     "pages/comment/comment",
@@ -15,7 +15,7 @@
     "pages/S1-2/S1-2",
     "pages/S1-story2/S1-story2",
     "pages/A-story1/A-story1",
-    "pages/A1-teach/A1-teach",
+    "pages/A1-teach-question/A1-teach-question",
     "pages/A1-question/A1-question",
     "pages/A1-answer/A1-answer",
     "pages/A2-test/A2-test",
@@ -33,14 +33,18 @@
     "pages/S2-story1/S2-story1",
     "pages/S2-1/S2-1",
     "pages/S2-story2/S2-story2",
-    "pages/S2-2/S2-2"
+    "pages/S2-2/S2-2",
+    "pages/A1-teach-answer/A1-teach-answer"
   ],
-  "requiredBackgroundModes": ["audio", "location"],
-  "window":{
-    "backgroundTextStyle":"light",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "挑战大魔王",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#aaa",

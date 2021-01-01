@@ -10,102 +10,14 @@ Page({
         //题目矩阵
         num: [  
         ],
-        n1:[[4, 2, 2, 2, 3, 1, 3, 1],
-        [1, 2, 3, 1, 1, 2, 4, 2],
-        [2, 3, 4, 4, 2, 3, 1, 2],
-        [1, 2, 2, 1, 3, 4, 2, 3],
-        [3, 4, 1, 4, 3, 4, 3, 2],
-        [2, 3, 3, 3, 1, 4, 1, 3],
-        [3, 4, 1, 1, 4, 1, 2, 3],
-        [3, 2, 2, 1, 3, 3, 4, 1],
-        [2, 3, 2, 2, 4, 2, 1, 4],
-        [1, 3, 3, 1, 2, 3, 4, 1],],
-        n2:[[4, 2, 2, 2, 3, 1, ],
-        [1, 2, 3, 1, 1, 2, ],
-        [2, 3, 4, 4, 2, 3, ],
-        [1, 2, 2, 1, 3, 4, ],
-        [3, 4, 1, 4, 3, 4, ],
-        [2, 3, 3, 3, 1, 4, ],
-        [3, 4, 1, 1, 4, 1, ],
-        [3, 2, 2, 1, 3, 3, ]],
-        //黑体矩阵
-        keynum: [
-            
-        ],
-        k2:[ [0, 0, 1, 0, 0, 1, ],
-        [1, 0, 0, 0, 0, 0, ],
-        [0, 0, 1, 0, 0, 0, ],
-        [0, 0, 0, 1, 0, 0, ],
-        [0, 0, 1, 0, 0, 0, ],
-        [1, 0, 0, 0, 1, 0, ],
-        [0, 0, 0, 1, 0, 1, ],
-        [0, 1, 0, 1, 0, 0, ]],
-        k1:[[0, 0, 0, 0, 0, 1, 0, 1],
-        [0, 1, 0, 0, 1, 0, 0, 0],
-        [0, 0, 1, 0, 0, 0, 1, 0],
-        [1, 0, 0, 1, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0, 1, 0, 0],
-        [1, 0, 0, 0, 1, 0, 0, 0],
-        [0, 1, 0, 0, 0, 0, 0, 1],
-        [1, 0, 0, 1, 0, 0, 1, 0],
-        [0, 0, 1, 0, 0, 0, 0, 1],
-        [0, 0, 0, 0, 1, 0, 1, 0],],
+        n1:[],
+        //需要选择的数量
+        keynum: 0,  
         //已选择矩阵
         select: [
         ],
-        s1:[ [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0],],
-        s2:[[0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ],
-        [0, 0, 0, 0, 0, 0, ]],
-        // num: [
-            // [4, 2, 2, 2, 3, 1, ],
-            // [1, 2, 3, 1, 1, 2, ],
-            // [2, 3, 4, 4, 2, 3, ],
-            // [1, 2, 2, 1, 3, 4, ],
-            // [3, 4, 1, 4, 3, 4, ],
-            // [2, 3, 3, 3, 1, 4, ],
-            // [3, 4, 1, 1, 4, 1, ],
-            // [3, 2, 2, 1, 3, 3, ]
-        // ],
-        // keynum: [
-            // [0, 0, 1, 0, 0, 1, ],
-            // [1, 0, 0, 0, 0, 0, ],
-            // [0, 0, 1, 0, 0, 0, ],
-            // [0, 0, 0, 1, 0, 0, ],
-            // [0, 0, 1, 0, 0, 0, ],
-            // [1, 0, 0, 0, 1, 0, ],
-            // [0, 0, 0, 1, 0, 1, ],
-            // [0, 1, 0, 1, 0, 0, ]
-        // ],
-        // select: [
-        //     [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ],
-        // [0, 0, 0, 0, 0, 0, ]],
-        // BOLD_NUM: 12,
-        
-        //需要选择的数量
-        BOLD_NUM:21,
-        b1:21,
-        b2:12,
+        age2:[10,8],
+        age1:[9,6],
         checkcnt: 0,
         hidden: false,
         over: false,
@@ -123,26 +35,57 @@ Page({
     onLoad: function (options) {
         let age = app.globalData.age;
         //判断年龄,生成题目
-        if(getApp().globalData.level==2)
+        let random=4;
+        let row=0;
+        let col=0;
+        if(getApp().globalData.level===2)
         {
-            this.setData({
-                num:this.data.n1,
-                keynum:this.data.k1,
-                select:this.data.s1,
-                BOLD_NUM:this.data.b1,
-                practice:getApp().globalData.practice
-            })
+            row=this.data.age2[0];
+            col=this.data.age2[1];
+            random=Math.floor(Math.random()*5)+6;
         }
-        else if(getApp().globalData.level==1)
+        else if(getApp().globalData.level===1)
         {
-            this.setData({
-                num:this.data.n2,
-                keynum:this.data.k2,
-                select:this.data.s2,
-                BOLD_NUM:this.data.b2,
-                practice:getApp().globalData.practice
-            })
+            row=this.data.age1[0];
+            col=this.data.age1[1];
+            random=Math.floor(Math.random()*4)+4;
         }
+        let n1=new Array();
+        let select=new Array();
+        let key=0;
+        for(let i=0;i<row;++i)
+        {
+            n1[i]=new Array();
+            select[i]=new Array();
+        }
+        for(let i=0;i<row;++i)
+        {
+            for(let j=0;j<col;++j)
+            {
+                let a1= String.fromCharCode(65+Math.floor(Math.random()*26));
+                let a2;
+                if(Math.floor(Math.random()*5)+6===random)
+                {
+                    a2= String.fromCharCode(a1.charCodeAt()+32);
+                }
+                else{
+                    a2= String.fromCharCode(97+Math.floor(Math.random()*26));
+                }
+                if((a1.charCodeAt()+32)===a2.charCodeAt())
+                {
+                    key++;
+                }
+                n1[i][j]=a1+a2;
+                select[i][j]=0;
+            }
+        }
+        this.setData({
+            num:n1,
+            keynum:key,
+            select:select,
+            practice:getApp().globalData.practice
+        })
+        console.log(key)
         setInterval(this.increase, 111)
     },
     increase() {
@@ -162,11 +105,11 @@ Page({
         })
     },
     handletapview(e) {
-        // console.log(e)
         let col = parseInt(e.target.dataset.col)
         let row = parseInt(e.target.dataset.row)
         let select=this.data.select;
-        if (this.data.keynum[row][col] === 1
+        if (this.data.num[row][col].charAt(0).charCodeAt()+32 === 
+        this.data.num[row][col].charAt(1).charCodeAt()
             && select [row][col]===0) {
             let arr = this.data.select;
             let n = this.data.checkcnt + 1;
@@ -176,12 +119,21 @@ Page({
                 select: arr,
                 checkcnt: n
             })
-
+            
         } else {
-            //闪烁红色
+            //闪烁
+            let arr = this.data.select;
+            if(arr[row][col] ===0)
+                arr[row][col] = -1;
+                else if(arr[row][col] ===-1){
+                arr[row][col] = 0;
+            }
+            this.setData({
+                select: arr,
+            })
         }
         //whether  all the ceil is chosed
-        if (this.data.checkcnt == this.data.BOLD_NUM) {
+        if (this.data.checkcnt === this.data.keynum) {
             this.setData({
                 showDialog: !this.data.showDialog
             })
