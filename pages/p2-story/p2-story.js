@@ -39,7 +39,7 @@ Page({
     //新
     timenumber: [5, 10, 15],
     rdtimetofs: 5,
-    readingtime: 5,
+    readingtime: 3,
     readingtimer: '',
     canlook: false,
     canclick: false,

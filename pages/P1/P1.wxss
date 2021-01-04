@@ -202,7 +202,6 @@
   position: relative;
   /* top: 10rpx;  */
   /* margin: 40rpx; */
-  /* background-color: rgb(64, 164, 221); */
   border-radius: 50rpx;
 }
 .pjh-image {
@@ -222,8 +221,6 @@
 }
 .game .math .tt{
   font-size: 60rpx;
-  display: flex;
-  justify-content: center;
   position: relative;
   top: 30rpx;
 }

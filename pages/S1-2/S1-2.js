@@ -33,13 +33,13 @@ Page({
     console.log(this.getquestionid())
     var question
     var number
+    number=numberInfo.postList
     if(getApp().globalData.level==1){
       this.setData({
         imgnumber:4,
         practice:getApp().globalData.practice
       })
       question=questionInfo.postList
-      number=numberInfo.postList
     }
     else if(getApp().globalData.level==2){
       this.setData({
@@ -47,7 +47,6 @@ Page({
         practice:getApp().globalData.practice
       })
       question=questionInfo.postList2
-      number=numberInfo.postList2
     }
     var selectQuestionId=this.data.selectQuestionId
     this.setData({
@@ -142,6 +141,9 @@ Page({
            ifAnswerRight:ifAnswerRight,
            k:k
          })
+         if (k == 6) {
+          that.nextgame()
+      }
          clearInterval(that.data.time)
     } else {
       animation()
@@ -201,7 +203,7 @@ Page({
    daojishi: function (options) {
     var that = this;
     var numberid = this.data.numberid
-    if (this.data.imgnumber == 4) {
+    // if (this.data.imgnumber == 4) {
       var i = setInterval(function () {
         numberid = numberid + 1;
         if (numberid >= 6) {
@@ -222,28 +224,28 @@ Page({
           console.log(numberid)
         }
       }, 1000)
-    } else if (this.data.imgnumber == 9) {
-      var i = setInterval(function () {
-        numberid = numberid + 1;
-        if (numberid >= 10) {
-          let isPage2 = that.data.isPage2;
-          let isPage3 = that.data.isPage3;
-          isPage2 = false;
-          isPage3 = true;
-          that.answerdaojishi();
-          that.setData({
-            isPage2: isPage2,
-            isPage3: isPage3
-          })
-          clearInterval(i)
-        } else {
-          that.setData({
-            numberid: numberid
-          })
-          console.log(numberid)
-        }
-      }, 1000)
-    }
+    // } else if (this.data.imgnumber == 9) {
+    //   var i = setInterval(function () {
+    //     numberid = numberid + 1;
+    //     if (numberid >= 10) {
+    //       let isPage2 = that.data.isPage2;
+    //       let isPage3 = that.data.isPage3;
+    //       isPage2 = false;
+    //       isPage3 = true;
+    //       that.answerdaojishi();
+    //       that.setData({
+    //         isPage2: isPage2,
+    //         isPage3: isPage3
+    //       })
+    //       clearInterval(i)
+    //     } else {
+    //       that.setData({
+    //         numberid: numberid
+    //       })
+    //       console.log(numberid)
+    //     }
+    //   }, 1000)
+    // }
   },
    //选择图片
    selectimg(option)
@@ -295,49 +297,53 @@ Page({
           })
         }
      }
-     if(that.data.k==6){
-      var that=this
-     var score=60+this.data.scole*8
-     this.setData({
-       scole:score/2
-     })
-     console.log(this.data.scole,"分")
-     setTimeout(() =>{
-      that.setData({
-        showDialog: !that.data.showDialog
+     if (that.data.k == 6) {
+      that.nextgame()
+  }
+},
+
+nextgame: function () {
+  var that = this
+  var score = 60 + this.data.scole * 8
+  this.setData({
+    scole: score / 2
+  })
+  console.log(this.data.scole, "分")
+  setTimeout(() => {
+    that.setData({
+      showDialog: !that.data.showDialog
+    })
+  }, 500)
+  setTimeout(function () {
+
+    if (getApp().globalData.practice == false) {
+      wx.request({
+        url: 'https://www.yuan619.xyz:8887/history/upscore6',
+        data: {
+          id: app.globalData.gameId,
+          score: that.data.scole,
+        },
+        method: 'POST',
+        header: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        success: function (res) {
+          console.log(res.data);
+        },
+        fail: function (res) {
+          console.log("...fail...");
+        }
       })
-    }, 500) 
-       setTimeout(function () {
-         if(getApp().globalData.practice==false){
-          wx.request({
-            url: 'https://www.yuan619.xyz:8887/history/upscore6',
-            data: {
-              id: app.globalData.gameId,
-              score: that.data.scole,
-            },
-            method: 'POST',
-            header: {
-              "Content-Type": "application/x-www-form-urlencoded"
-            },
-            success: function (res) {
-              console.log(res.data);
-            },
-            fail: function (res) {
-              console.log("...fail...");
-            }
-          })
-           wx.redirectTo({
-             url: '/pages/S3-story/S3-story'
-           })
-         }
-         else if(getApp().globalData.practice==true){
-          console.log(that.data.scole)
-          wx.switchTab({
-            url: '/pages/practice/practice',
-          })
-         }
-         
-       },3500);
+      wx.redirectTo({
+        url: '/pages/S3-story/S3-story'
+      })
+    } else if (getApp().globalData.practice == true) {
+      console.log(that.data.scole)
+      wx.switchTab({
+        url: '/pages/practice/practice',
+      })
     }
-   },
+
+  }, 1500);
+}
 })

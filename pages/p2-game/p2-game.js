@@ -75,12 +75,12 @@ Page({
     let nd=this.data.classhard
     if(nd==1){
       this.setData({//重新设置时间
-        readingtime:5
+        readingtime:3
       })
     }
     else{
       this.setData({//重新设置时间
-        readingtime:5
+        readingtime:3
       })
     }
     this.awaitOpenId().then(openId => {
@@ -330,12 +330,12 @@ scaleTap: function(event) {
     let nd=this.data.classhard
     if(nd==1){
       this.setData({//重新设置时间
-        readingtime:5
+        readingtime:3
       })
     }
     else{
       this.setData({//重新设置时间
-        readingtime:5
+        readingtime:3
       })
     }
     var fs=this.returnscore();

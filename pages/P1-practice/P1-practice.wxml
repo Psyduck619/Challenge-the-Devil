@@ -32,31 +32,31 @@
 
 <view class="math" bindtap="select1">
   <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
-  <view class="tt" style="color:{{color1}}">{{number1}}</view>
+  <view class="tt" style="color:{{color1}};left:{{left1}}">{{number1}}</view>
   <image wx:if="{{color1=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
 </view>
 
 <view class="math" bindtap="select2">
   <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
-  <view class="tt" style="color:{{color2}}">{{number2}}</view>
+  <view class="tt" style="color:{{color2}};left:{{left2}}">{{number2}}</view>
   <image wx:if="{{color2=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
 </view>
 
 <view class="math" bindtap="select3">
   <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
-  <view class="tt" style="color:{{color3}}">{{number3}}</view>
+  <view class="tt" style="color:{{color3}};left:{{left3}}">{{number3}}</view>
   <image wx:if="{{color3=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
 </view>
 
 <view class="math" bindtap="select4">
   <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
-  <view class="tt" style="color:{{color4}}">{{number4}}</view>
+  <view class="tt" style="color:{{color4}};left:{{left4}}">{{number4}}</view>
   <image wx:if="{{color4=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
 </view>
 
 <view class="math" bindtap="select5">
   <image class='pjh-image' src="http://yuan619.xyz/ll/sword.png"></image>
-  <view class="tt" style="color:{{color5}}">{{number5}}</view>
+  <view class="tt" style="color:{{color5}};left:{{left5}}">{{number5}}</view>
   <image wx:if="{{color5=='rgb(48, 204, 255)'}}" class='pjh-harm' src="http://yuan619.xyz/ll/harm.png"></image>
 </view>
 

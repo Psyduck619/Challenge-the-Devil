@@ -220,8 +220,6 @@
 }
 .game .math .tt{
   font-size: 60rpx;
-  display: flex;
-  justify-content: center;
   position: relative;
   top: 30rpx;
 }

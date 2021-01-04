@@ -49,7 +49,12 @@ Page({
         that.setData({
           list: list3
         })
-        if(list2){
+        console.log(list3.length)
+        if(list3.length == 0){
+          that.setData({
+            hasInfo: false
+          })
+        } else {
           that.setData({
             hasInfo: true
           })

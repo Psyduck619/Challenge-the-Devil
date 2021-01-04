@@ -4,7 +4,7 @@
 <!-- 第一页 -->
 <image id="{{isPage1?'title':'hiden'}}" src="http://yuan619.xyz/teach.png"></image>
     <view id="{{isPage1?'text':'hiden'}}">
-      <image src="http://yuan619.xyz/pjh2.gif"></image>
+      <image src="http://yuan619.xyz/pjh/GIF2.gif"></image>
     </view>
     <view id="{{isPage1?'begin':'hiden'}}" bindtap="begin">
       <text class="button">确定</text>

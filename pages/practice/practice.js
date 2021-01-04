@@ -28,13 +28,15 @@ Page({
         if(list3.length < 1){
           wx.showToast({
             title: '必须要打败一次大魔王后才能进行训练哦',
-            duration: '1000'
+            icon:'none',
+            duration:1600,
+            mask:true
           })
           setTimeout(() => {
             wx.switchTab({
               url: '/pages/index/index',
             })
-          },1000)
+          },1600)
         }
       },
       fail: function (res) {

@@ -16,6 +16,7 @@ page{
   width: 100%;
   position: relative;
   top: 10rpx;
+  visibility: hidden;
 }
 .head .sound-icon{
   position: relative;
@@ -44,7 +45,7 @@ page{
   font-size: 100rpx;
 } */
 .start{
-  width: 55%;
+  width: 75% !important;
   height: 160rpx;
   margin: 0 auto;
   text-align: center;
@@ -53,7 +54,7 @@ page{
   justify-content: center;
 }
 .button{
-  width: 30%;
+  width: 70% !important;
   border: rgb(119, 64, 12) solid 4px;
   border-radius: 25rpx;
   background-color: rgb(236, 236, 198);

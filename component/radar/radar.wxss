@@ -1,9 +1,0 @@
-.radar {
-  text-align: center;
-}
-
-.radar canvas {
-  width: 750rpx;
-  height: 500rpx;
-  background-color: #6fb9de;
-}

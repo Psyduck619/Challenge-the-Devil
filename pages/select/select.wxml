@@ -6,7 +6,7 @@
 			<input type="text" placeholder="请输入姓名..." value="{{name}}" bindinput="nameInput"></input>
 		</view>
 		<view class="sex">
-			<text class="sex">2.请问你是男生还是女生?</text>
+			<text class="">2.请问你是男生还是女生?</text>
 			<radio-group class="radio_group" bindchange="radioChange">
 				<radio class="radio" wx:for="{{sexs}}" wx:key="num" value="{{item.num}}" checked="{{item.checked}}">
 					<text style='margin-left: 0px;'>{{item.value}}</text>

@@ -15,18 +15,29 @@ page{
 }
 .s{
   width: 80%;
-  /* height: 69%; */
+  height: 55%;
   margin-top: 40rpx;
   padding-top: 20rpx;
-  padding-bottom: 30rpx;
+  /* padding-bottom: 30rpx; */
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   text-align: center;
   border: rgb(119, 64, 12) solid 6px;
   border-radius: 20rpx;
   background-color: rgb(236, 236, 198);
+}
+.s .sex{
+  height: 30%;
+}
+.s .name{
+  height: 30%;
+  margin-bottom: 50rpx;
+}
+.s .age{
+  height: 30%;
+  margin-bottom: 40rpx;
 }
 text{
   display: block;
@@ -41,7 +52,7 @@ text{
   border: rgb(119, 64, 12) solid 2px;
   border-radius: 10rpx;
   text-align: start;
-  margin-bottom: 23rpx;
+  /* margin-bottom: 103rpx; */
   padding-left: 10rpx;
   display: flex;
   flex-direction: column;

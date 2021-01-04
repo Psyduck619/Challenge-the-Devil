@@ -365,7 +365,7 @@ var question_four = [
     },
     //题目4 36-44
     {
-      question:'窗内一只猫睡在沙发上，窗外下着倾盆大雨，一只瓢虫趴在窗户上面，蜜蜂飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在毯子上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -375,7 +375,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'窗内一只猫睡在沙发上，窗外下着绵绵细雨，一只瓢虫趴在窗户上面，蜜蜂飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在沙发上，桌子上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -385,7 +385,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'窗内一只猫睡在沙发上，窗外下着绵绵细雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在沙发上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -395,7 +395,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'窗内一只猫睡在地毯上，窗外下着倾盆大雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在毯子上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -405,7 +405,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'窗内一只猫睡在地毯上，窗外下着倾盆大雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在毯子上，桌子上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-5.jpg',
       'http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -415,7 +415,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'小红穿着颜色和围巾一样的手套，在狗狗的陪伴下堆起了一个拿着树枝的雪人，却吓跑了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着树枝的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -425,7 +425,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着树枝的雪人，却吓跑了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着树枝的雪人，可惜没有引来鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -435,7 +435,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着树枝的雪人，还引来了鸟儿欣赏',
+      question:'小红在狗狗的陪伴下堆起了一个拿着树枝的雪人，可惜没有引来鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -445,7 +445,7 @@ var question_four = [
       imgnum:'4',
     },
   {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着扫帚的雪人，还引来了鸟儿欣赏',
+      question:'小红在狗狗的陪伴下堆起了一个拿着树枝的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -748,7 +748,7 @@ var question_four = [
     },
     //题目3 18-26
     {
-      question:'窗内一只猫睡在沙发上，窗外下着倾盆大雨，一只瓢虫趴在窗户上面，蜜蜂飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在毯子上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -764,7 +764,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在沙发上，窗外下着绵绵细雨，一只瓢虫趴在窗户上面，蜜蜂飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在沙发上，桌子上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -780,7 +780,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在沙发上，窗外下着绵绵细雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在沙发上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -796,7 +796,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在地毯上，窗外下着绵绵细雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在毯子上，桌子上摆着一盆花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -812,7 +812,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在地毯上，窗外下着倾盆大雨，一只瓢虫趴在窗户上面，蝴蝶飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在毯子上，桌子上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -828,7 +828,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在沙发上，窗外下着倾盆大雨，看不见一只瓢虫，蜜蜂飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在桌子上，地毯上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -845,7 +845,7 @@ var question_four = [
     },
   
     {
-      question:'窗内一只猫睡在沙发上，窗外下着绵绵细雨，看不见一只瓢虫，蜜蜂飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在桌子上，地毯上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -861,7 +861,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在地毯上，窗外下着绵绵细雨，看不见一只瓢虫，蜜蜂飞向了桌上的花',
+      question:'窗外下着倾盆大雨，一只猫躺在桌子上，沙发上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -877,7 +877,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'窗内一只猫睡在地毯上，窗外下着倾盆大雨，看不见一只瓢虫，蝴蝶飞向了桌上的花',
+      question:'窗外下着绵绵细雨，一只猫躺在桌子上，沙发上摆着一束花',
       img:['http://yuan619.xyz/pjh/1question6-1.jpg',
       'http://yuan619.xyz/pjh/1question6-2.jpg',
       'http://yuan619.xyz/pjh/1question6-3.jpg',
@@ -894,7 +894,7 @@ var question_four = [
     },
     //题目4
     {
-      question:'小红穿着颜色和围巾一样的手套，在狗狗的陪伴下堆起了一个拿着树枝的雪人，却吓走了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着树枝的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -910,7 +910,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着树枝的雪人，却吓走了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着树枝的雪人，可惜没吸引鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -926,7 +926,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着树枝的雪人，还引来了鸟儿欣赏',
+      question:'小红在狗狗的陪伴下堆起了一个拿着树枝的雪人，可惜没吸引鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -942,7 +942,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着扫帚的雪人，还引来了鸟儿欣赏',
+      question:'小红在狗狗的陪伴下堆起了一个拿着树枝的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -958,7 +958,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和围巾一样的手套，在猫猫的陪伴下堆起了一个拿着扫帚的雪人，却吓走了鸟儿',
+      question:'小红在狗狗的陪伴下堆起了一个拿着扫帚的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -974,7 +974,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和围巾一样的手套，在狗狗的陪伴下堆起了一个拿着扫帚的雪人，却吓走了鸟儿',
+      question:'小红在狗狗的陪伴下堆起了一个拿着扫帚的雪人，可惜没吸引鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -990,7 +990,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和帽子一样的手套，在狗狗的陪伴下堆起了一个拿着树枝的雪人，却吓走了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着扫帚的雪人，可惜没吸引鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -1006,7 +1006,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和帽子一样的手套，在狗狗的陪伴下堆起了一个拿着扫帚的雪人，却吓走了鸟儿',
+      question:'小红在猫猫的陪伴下堆起了一个拿着扫帚的雪人，引来了鸟儿欣赏',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -1022,7 +1022,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'小红穿着颜色和帽子一样的手套，在猫猫的陪伴下堆起了一个拿着扫帚的雪人，还引来了鸟儿欣赏',
+      question:'小红独自堆起了一个拿着扫帚的雪人，可惜没吸引鸟儿',
       img:['http://yuan619.xyz/pjh/1question7-1.jpg',
       'http://yuan619.xyz/pjh/1question7-2.jpg',
       'http://yuan619.xyz/pjh/1question7-3.jpg',
@@ -1039,7 +1039,7 @@ var question_four = [
     },
     //题目5
     {
-      question:'早上9点的屋子里，一把伞挂在墙上，大仙人掌靠在窗户的左边，枕头上从上到下放着黄绿紫的书',
+      question:'早上12点的屋子里，大仙人掌放在窗户左边，伞被丢在地上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1055,7 +1055,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'早上12点的屋子里，一把伞挂在墙上，大仙人掌靠在窗户的左边，枕头上从上到下放着黄绿紫的书',
+      question:'晚上12点的屋子里，大仙人掌放在窗户右边，伞被丢在地上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1071,7 +1071,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'早上12点的屋子里，一把伞挂在墙上，大仙人掌靠在窗户的左边，枕头上从上到下放着红绿黄的书',
+      question:'晚上9点的屋子里，大仙人掌放在窗户右边，伞被挂在墙上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1087,7 +1087,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'晚上12点的屋子里，一把伞挂在墙上，大仙人掌靠在窗户的左边，枕头上从上到下放着红绿黄的书',
+      question:'早上9点的屋子里，大仙人掌放在窗户左边，伞被挂在墙上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1103,7 +1103,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'晚上12点的屋子里，一把伞挂在墙上，大仙人掌靠在窗户的左边，枕头上从上到下放着黄绿紫的书',
+      question:'早上12点的屋子里，大仙人掌放在窗户左边，伞被挂在墙上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1119,7 +1119,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'晚上12点的屋子里，一把伞丢在地上，大仙人掌靠在窗户的左边，枕头上从上到下放着黄绿紫的书',
+      question:'晚上9点的屋子里，大仙人掌放在窗户右边，伞被丢在地上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1135,7 +1135,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'晚上12点的屋子里，一把伞丢在地上，大仙人掌靠在窗户的左边，枕头上从上到下放着红绿黄的书',
+      question:'早上9点的屋子里，大仙人掌放在窗户右边，伞被丢在地上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1151,7 +1151,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'晚上9点的屋子里，一把伞丢在地上，大仙人掌靠在窗户的右边，枕头上从上到下放着红绿黄的书',
+      question:'晚上9点的屋子里，大仙人掌放在窗户左边，伞被挂在墙上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',
@@ -1167,7 +1167,7 @@ var question_four = [
       imgnum:'9',
     },
     {
-      question:'早上12点的屋子里，一把伞丢在地上，大仙人掌靠在窗户的右边，枕头上从上到下放着红绿黄的书',
+      question:'早上9点的屋子里，大仙人掌放在窗户左边，伞被丢在地上',
       img:['http://yuan619.xyz/pjh/1question8-1.jpg',
       'http://yuan619.xyz/pjh/1question8-2.jpg',
       'http://yuan619.xyz/pjh/1question8-3.jpg',

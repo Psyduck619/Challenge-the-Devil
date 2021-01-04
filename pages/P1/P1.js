@@ -10,6 +10,11 @@ Page({
     color3: 'rgb(37, 30, 51)',
     color4: 'rgb(37, 30, 51)',
     color5: 'rgb(37, 30, 51)',
+    left1: '140rpx',
+    left2: '300rpx',
+    left3: '250rpx',
+    left4: '190rpx',
+    left5: '335rpx',
     // 展示不同部分的代码
     show: true,
     show2: true,
@@ -45,10 +50,10 @@ Page({
       if (this.data.count == 8) {
         var score = 0
         var ontime = (new Date() - this.data.time) / 1000.0
-        if (ontime <= 15) {
+        if (ontime <= 30) {
           score = 100
-        } else if (ontime > 15) {
-          score = 100 - (ontime - 15) * 2.8571
+        } else if (ontime > 30) {
+          score = 100 - (ontime - 30) * 2.5
         }
         this.setData({
           score: Math.floor(score / 2)
@@ -78,10 +83,10 @@ Page({
     } else if (this.data.level == 2) {
       if (this.data.count == 12) {
         var ontime = (new Date() - this.data.time) / 1000.0
-        if (ontime <= 25) {
+        if (ontime <= 45) {
           score = 100
-        } else if (ontime > 25) {
-          score = 100 - (ontime - 25) * 2.5
+        } else if (ontime > 45) {
+          score = 100 - (ontime - 45) * 2
         }
         console.log(score)
         this.setData({
@@ -114,10 +119,10 @@ Page({
     let max
     let min
     if (this.data.level == 1) {
-      max = 10000
+      max = 8999
       min = 1000
     } else if (this.data.level == 2) {
-      max = 1000000
+      max = 899999
       min = 100000
     }
     let random_index1 = Math.floor(Math.random() * 5) + 1
@@ -127,10 +132,47 @@ Page({
       random_index2 = Math.floor(Math.random() * 5) + 1
     }
     var temp = new Array(5)
-    var i = 1
-    while (i <= 5) {
-      temp[i] = Math.floor(Math.random() * (max - min))
-      i = i + 1
+    var i = 2
+    // 基础数字生成
+    var number = Math.floor(Math.random() * max + min)
+    console.log(number)
+    temp[1] = number
+    var a1 = 1
+    var b1 = 2
+    var a2 = 1
+    var b2 = 3
+    while(i <= 5){
+      var math = number.toString()
+      var sl = math.split('')
+      console.log(sl)
+      if(this.data.level == 1){
+        var n = sl[a1]
+        sl[a1] = sl[b1]
+        sl[b1] = n
+        if(a1 == 1 && b1!=3){
+          b1++
+        }
+        else if(b1 == 3 && a1 != 2){
+          a1++
+        }else{
+          b1 = 0
+        }
+        math = sl.join("")
+        temp[i] = parseInt(math)
+      }else{
+        var n = sl[a2]
+        sl[a2] = sl[b2]
+        sl[b2] = n
+        if(b2 == 6){
+          a2 = 2
+        }else{
+          a2++
+          b2++
+        }
+        math = sl.join("")
+        temp[i] = parseInt(math)
+      }
+      i++
     }
     temp[random_index2] = temp[random_index1]
     i = 1
