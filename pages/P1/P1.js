@@ -47,13 +47,16 @@ Page({
   randomMath: function () {
     var _this = this
     if (this.data.level == 1) {
-      if (this.data.count == 8) {
+      if (this.data.count == 5) {
         var score = 0
         var ontime = (new Date() - this.data.time) / 1000.0
-        if (ontime <= 30) {
+        if (ontime <= 8) {
           score = 100
-        } else if (ontime > 30) {
-          score = 100 - (ontime - 30) * 2.5
+        } else if (ontime > 8) {
+          score = 100 - (ontime - 8) * 2.5
+          if(score <= 30){
+            score = 30
+          }
         }
         this.setData({
           score: Math.floor(score / 2)
@@ -81,12 +84,15 @@ Page({
         })
       }
     } else if (this.data.level == 2) {
-      if (this.data.count == 12) {
+      if (this.data.count == 5) {
         var ontime = (new Date() - this.data.time) / 1000.0
-        if (ontime <= 45) {
+        if (ontime <= 20) {
           score = 100
-        } else if (ontime > 45) {
-          score = 100 - (ontime - 45) * 2
+        } else if (ontime > 20) {
+          score = 100 - (ontime - 20) * 2
+          if(score <= 30){
+            score = 30
+          }
         }
         console.log(score)
         this.setData({
@@ -119,61 +125,317 @@ Page({
     let max
     let min
     if (this.data.level == 1) {
-      max = 8999
-      min = 1000
-    } else if (this.data.level == 2) {
-      max = 899999
-      min = 100000
-    }
-    let random_index1 = Math.floor(Math.random() * 5) + 1
-    let random_index2 = Math.floor(Math.random() * 5) + 1
-    // 使得第二个数字位置不等于第一个数字位置
-    while (random_index1 == random_index2) {
-      random_index2 = Math.floor(Math.random() * 5) + 1
-    }
-    var temp = new Array(5)
-    var i = 2
-    // 基础数字生成
-    var number = Math.floor(Math.random() * max + min)
-    console.log(number)
-    temp[1] = number
-    var a1 = 1
-    var b1 = 2
-    var a2 = 1
-    var b2 = 3
-    while(i <= 5){
-      var math = number.toString()
-      var sl = math.split('')
-      console.log(sl)
-      if(this.data.level == 1){
-        var n = sl[a1]
-        sl[a1] = sl[b1]
-        sl[b1] = n
-        if(a1 == 1 && b1!=3){
-          b1++
-        }
-        else if(b1 == 3 && a1 != 2){
-          a1++
-        }else{
-          b1 = 0
-        }
-        math = sl.join("")
-        temp[i] = parseInt(math)
+      if(this.data.count == 0){
+        max = 89
+        min = 10
+      }else if(this.data.count == 1 || this.data.count == 2){
+        max = 899
+        min = 100
       }else{
-        var n = sl[a2]
-        sl[a2] = sl[b2]
-        sl[b2] = n
-        if(b2 == 6){
-          a2 = 2
-        }else{
-          a2++
-          b2++
-        }
-        math = sl.join("")
-        temp[i] = parseInt(math)
+        max = 8999
+        min = 1000
       }
-      i++
+    } else if (this.data.level == 2) {
+      if(this.data.count == 0){
+        max = 8999
+        min = 1000
+      }else if(this.data.count == 1 || this.data.count == 2){
+        max = 89999
+        min = 10000
+      }else{
+        max = 899999
+        min = 100000
+      }
     }
+    // 生成值相同的两个下标
+    let random_index1 = Math.floor(Math.random() * 5) + 1
+    let random_index2 = random_index1 + 1 % 5
+    // 使得第二个数字位置不等于第一个数字位置
+    while((random_index2 - 1 == random_index1 || random_index2 + 1 == random_index1)){
+      var number = random_index2
+      random_index2 = Math.floor(Math.random() * 5) + 1
+      if(random_index1 == random_index2){
+        random_index2 = number
+      }
+    }
+    console.log(random_index1)
+    console.log(random_index2)
+    var temp = new Array(5)
+    // 基础数字生成
+    if(this.data.level == 1){
+      if(this.data.count == 0){
+        var i = 1
+        for(i = 1; i <= 5; i++){
+          temp[i] = Math.floor(Math.random() * max + min)
+        }
+        for(i = 1; i <= 5; i++){
+          while(temp[i] == temp[i % 5 + 1] || temp[i] == temp[i % 5 + 2] || temp[i] == temp[i % 5 + 3] || temp[i] == temp[i % 5 + 4]){
+            temp[i] = Math.floor(Math.random() * max + min)
+          }
+        }
+      }
+      else if(this.data.count == 1 || this.data.count == 2){
+        var a = 0
+        var b = 1
+        var number = Math.floor(Math.random() * max + min)
+        var flag = 0
+        var math = number.toString()
+        var sl = math.split('')
+        if(sl[0] != sl[1] && sl[0] != sl[2] && sl[1] != sl[2]){
+          flag = 1
+        }
+        while(flag == 0){
+          number = Math.floor(Math.random() * max + min)
+          math = number.toString()
+          sl = math.split('')
+          if(sl[0] != sl[1] && sl[0] != sl[2] && sl[1] != sl[2]){
+            flag = 1
+          }
+        }
+        temp[1] = number
+        var i = 2
+        for(i=2; i<=5; i++){
+          if(i == random_index2){
+          }else{
+            number = Math.floor(Math.random() * max + min)
+            math = number.toString()
+            sl = math.split('')
+            var n = sl[a]
+            sl[a] = sl[b]
+            sl[b] = n
+            math = sl.join("")
+            temp[i] = parseInt(math)
+            if(a == 0 && b == 1){
+              b ++ 
+            }else{
+              a ++
+            }
+          }
+        }
+      }else{
+        var number = Math.floor(Math.random() * max + min)
+        var flag = 0
+        var math = number.toString()
+        var sl = math.split('')
+        if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+          flag = 1
+        }
+        while(flag == 0){
+          number = Math.floor(Math.random() * max + min)
+          math = number.toString()
+          sl = math.split('')
+          if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+            flag = 1
+          }
+        }
+        console.log(number)
+        temp[1] = number
+        var a1 = 1
+        var b1 = 2
+        var i = 2
+        while(i <= 5){
+          var math = number.toString()
+          var sl = math.split('')
+          var n = sl[a1]
+          sl[a1] = sl[b1]
+          sl[b1] = n
+          if(a1 == 1 && b1!=3){
+            b1++
+          }
+          else if(b1 == 3 && a1 != 2){
+            a1++
+          }else{
+            b1 = 0
+          }
+          console.log(sl)
+          math = sl.join("")
+          temp[i] = parseInt(math)
+          i++
+        }
+      }
+    }else{
+      if(this.data.count == 0){
+        var number = Math.floor(Math.random() * max + min)
+        var flag = 0
+        var math = number.toString()
+        var sl = math.split('')
+        if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+          flag = 1
+        }
+        while(flag == 0){
+          number = Math.floor(Math.random() * max + min)
+          math = number.toString()
+          sl = math.split('')
+          if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+            flag = 1
+          }
+        }
+        console.log(number)
+        temp[1] = number
+        var a1 = 1
+        var b1 = 2
+        var i = 2
+        while(i <= 5){
+          var math = number.toString()
+          var sl = math.split('')
+          var n = sl[a1]
+          sl[a1] = sl[b1]
+          sl[b1] = n
+          if(a1 == 1 && b1!=3){
+            b1++
+          }
+          else if(b1 == 3 && a1 != 2){
+            a1++
+          }else{
+            b1 = 0
+          }
+          console.log(sl)
+          math = sl.join("")
+          temp[i] = parseInt(math)
+          i++
+        }
+      }else if(this.data.count == 1 || this.data.count == 2){
+        var number = Math.floor(Math.random() * max + min)
+        var flag = 0
+        var math = number.toString()
+        var sl = math.split('')
+        if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[0] != sl[4] && sl[1] != sl[2] && sl[1] != sl[3] && sl[1] != sl[4] && sl[2] != sl[3] && sl[2] != sl[4] && sl[3] != sl[4]){
+          flag = 1
+        }
+        while(flag == 0){
+          number = Math.floor(Math.random() * max + min)
+          math = number.toString()
+          sl = math.split('')
+          if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[0] != sl[4] && sl[1] != sl[2] && sl[1] != sl[3] && sl[1] != sl[4] && sl[2] != sl[3] && sl[2] != sl[4] && sl[3] != sl[4]){
+            flag = 1
+          }
+        }
+        console.log(number)
+        temp[1] = number
+        var a1 = 1
+        var b1 = 3
+        var i = 2
+        while(i <= 5){
+          var math = number.toString()
+          var sl = math.split('')
+          var n = sl[a1]
+          sl[a1] = sl[b1]
+          sl[b1] = n
+          if(a1 == 1 && b1 != 4){
+            b1++
+          }
+          else if(b1 == 4 && a1 != 2){
+            a1++
+          }else{
+            a1 = 3
+            b1 = 4
+          }
+          console.log(sl)
+          math = sl.join("")
+          temp[i] = parseInt(math)
+          i++
+        }
+      }else{
+        var number = Math.floor(Math.random() * max + min)
+        var flag = 0
+        var math = number.toString()
+        var sl = math.split('')
+        if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[0] != sl[4] && sl[1] != sl[2] && sl[1] != sl[3] && sl[1] != sl[4] && sl[2] != sl[3] && sl[2] != sl[4] && sl[3] != sl[4]){
+          flag = 1
+        }
+        while(flag == 0){
+          number = Math.floor(Math.random() * max + min)
+          math = number.toString()
+          sl = math.split('')
+          if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[0] != sl[4] && sl[1] != sl[2] && sl[1] != sl[3] && sl[1] != sl[4] && sl[2] != sl[3] && sl[2] != sl[4] && sl[3] != sl[4]){
+            flag = 1
+          }
+        }
+        console.log(number)
+        temp[1] = number
+        var a1 = 1
+        var b1 = 3
+        var i = 2
+        while(i <= 5){
+          var math = number.toString()
+          var sl = math.split('')
+          var n = sl[a1]
+          sl[a1] = sl[b1]
+          sl[b1] = n
+          if(a1 == 1 && b1 != 4){
+            b1++
+          }
+          else if(b1 == 4 && a1 != 2){
+            a1++
+          }else{
+            a1 = 3
+            b1 = 4
+          }
+          console.log(sl)
+          math = sl.join("")
+          temp[i] = parseInt(math)
+          i++
+        }
+      }
+    }
+    
+    // var number = Math.floor(Math.random() * max + min)
+    // var flag = 0
+    // var math = number.toString()
+    // var sl = math.split('')
+    // if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+    //   flag = 1
+    // }
+    // while(flag == 0){
+    //   number = Math.floor(Math.random() * max + min)
+    //   math = number.toString()
+    //   sl = math.split('')
+    //   if(sl[0] != sl[1] && sl[0] != sl[2] && sl[0] != sl[3] && sl[1] != sl[2] && sl[1] != sl[3] && sl[2] != sl[3]){
+    //     flag = 1
+    //   }
+    // }
+    // console.log(number)
+    // temp[1] = number
+    // var a1 = 1
+    // var b1 = 2
+    // var a2 = 1
+    // var b2 = 3
+    // while(i <= 5){
+    //   var math = number.toString()
+    //   var sl = math.split('')
+    //   if(this.data.level == 1){
+    //     var n = sl[a1]
+    //     sl[a1] = sl[b1]
+    //     sl[b1] = n
+    //     if(a1 == 1 && b1!=3){
+    //       b1++
+    //     }
+    //     else if(b1 == 3 && a1 != 2){
+    //       a1++
+    //     }else{
+    //       b1 = 0
+    //     }
+    //     console.log(sl)
+    //     math = sl.join("")
+    //     temp[i] = parseInt(math)
+    //   }else if(this.data.level == 2){
+    //     var n = sl[a2]
+    //     sl[a2] = sl[b2]
+    //     sl[b2] = n
+    //     if(b2 == 6){
+    //       a2 = 2
+    //     }else{
+    //       a2++
+    //       b2++
+    //     }
+    //     math = sl.join("")
+    //     temp[i] = parseInt(math)
+    //   }
+    //   i++
+    // }
+
+
+    // 进行赋值
     temp[random_index2] = temp[random_index1]
     i = 1
     this.setData({

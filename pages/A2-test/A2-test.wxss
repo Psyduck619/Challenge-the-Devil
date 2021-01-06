@@ -134,3 +134,24 @@
     text-align: center;
     align-items: center;
   }
+  .begin {
+      position: fixed;
+      bottom: 20rpx;
+      left: 230rpx;
+    height: 100rpx;
+    width: 300rpx;
+    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: rgb(119, 64, 12) solid 3px;
+  border-radius: 25rpx;
+  background-color: rgb(236, 236, 198);
+  color: rgb(119, 64, 12);
+  }
+  .button{
+    /* width: 30%; */
+    font-size: 48rpx;
+    font-weight: 700;
+    text-align: center;
+  }

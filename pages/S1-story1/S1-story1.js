@@ -11,9 +11,31 @@ Page({
   },
   //事件处理函数
   begin: function() {
-    wx.redirectTo({
-      url: '../S1-1/S1-1'
-    })
+    if(getApp().globalData.practice==true){
+      wx.redirectTo({
+        url: '../S1-1/S1-1'
+      })
+    }
+    else{
+      if(getApp().globalData.level==2){
+        wx.redirectTo({
+          url: '../S1-1/S1-1'
+        })
+      }
+      else if(getApp().globalData.level==1){
+        this.setData({
+          showDialog: !this.data.showDialog
+        })
+        setTimeout(  function() {
+          wx.redirectTo({
+            url: '../S1-story2/S1-story2'
+          })}
+          ,2000)
+        
+      }
+    }
+
+
   },
   onShow: function () {
     wx.hideHomeButton()

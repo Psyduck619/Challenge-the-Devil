@@ -18,7 +18,7 @@ Page({
     wx.redirectTo({
       url: '../A1-teach-question/A1-teach-question?id=0'
     })}
-    ,2000)
+    ,3000)
   },
   onShow: function () {
     wx.hideHomeButton()

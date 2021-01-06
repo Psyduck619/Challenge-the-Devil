@@ -2,7 +2,7 @@ var question = [
   {
     problem1:'蓝色正在变黄,绿色正在变紫',
     award:'http://yuan619.xyz/xy/award11.png',
-    problem2:'什么颜色正在变紫?',
+    problem2:'____正在变紫',
     difficulty:1,
     punish:15,
     answer:[
@@ -16,7 +16,7 @@ var question = [
   {
     problem1:'汽车变成了蛋糕,水杯变成了桌子',
     award:'http://yuan619.xyz/xy/award11.png',
-    problem2:'什么东西变成了蛋糕?',
+    problem2:'_____变成了蛋糕',
     difficulty:1,
     punish:15,
     answer:[
@@ -30,7 +30,7 @@ var question = [
   {
     problem1:'正方形变成了圆形,三角形变成了长方形',
     award:'http://yuan619.xyz/xy/award22.png',
-    problem2:'三角形变成了什么图形?',
+    problem2:'三角形变成了____',
     difficulty:1,
     punish:15,
     answer:[
@@ -44,7 +44,7 @@ var question = [
   {
     problem1:'手表变成了电脑,台灯变成了铅笔',
     award:'http://yuan619.xyz/xy/award22.png',
-    problem2:'什么正在变成电脑?',
+    problem2:'____正在变成电脑',
     difficulty:1,
     punish:15,
     answer:[
@@ -58,7 +58,7 @@ var question = [
   {
     problem1:"小明用绿色铅笔写了一个'红'字",
     award:'http://yuan619.xyz/xy/award33.png',
-    problem2:'谁用铅笔写了一个什么字?',
+    problem2:'____用铅笔写了一个____字?',
     difficulty:2,
     punish:11,
     answer:[
@@ -78,8 +78,8 @@ var question = [
     answer:[
       '小绿  水彩笔',
       '小红  铅笔',
-      '小蓝  钢笔',
-      '小明  水彩笔'
+      '小绿  钢笔',
+      '小红  水彩笔'
     ],
     rightIndex:0
   },
@@ -90,10 +90,10 @@ var question = [
     difficulty:3,
     punish:11,
     answer:[
-      '灰色  小白',
-      '蓝色  小明',
+      '红色  小白',
+      '紫色  小明',
       '紫色  小白',
-      '黑色  小明'
+      '红色  小明'
     ],
     rightIndex:2
   },
@@ -119,9 +119,9 @@ var question = [
     punish:8,
     answer:[
       '蓝色  番茄',
-      '绿色  土豆 ',
-      '黄色  黄瓜',
-      '灰色  西瓜'
+      '蓝色  西瓜 ',
+      '红色  番茄',
+      '红色  西瓜'
     ],
     rightIndex:0
   },

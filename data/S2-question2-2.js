@@ -2,7 +2,7 @@ var question = [
   {
     problem1:'蓝色正在变黄,绿色正在变紫',
     award:'http://yuan619.xyz/xy/award11.png',
-    problem2:'什么颜色正在变紫?',
+    problem2:'____正在变紫',
     difficulty:1,
     punish:18,
     answer:[
@@ -16,7 +16,7 @@ var question = [
   {
     problem1:'汽车变成了蛋糕,水杯变成了桌子',
     award:'http://yuan619.xyz/xy/award11.png',
-    problem2:'什么东西变成了蛋糕?',
+    problem2:'____变成了蛋糕',
     difficulty:1,
     punish:18,
     answer:[
@@ -30,7 +30,7 @@ var question = [
   {
     problem1:"小明用绿色铅笔写了一个'红'字",
     award:'http://yuan619.xyz/xy/award33.png',
-    problem2:'谁用铅笔写了一个什么字?',
+    problem2:'_____用铅笔写了一个__字',
     difficulty:2,
     punish:14,
     answer:[
@@ -44,14 +44,14 @@ var question = [
   {
     problem1:"小绿用黑色的水彩笔写了'红'字",
     award:'http://yuan619.xyz/xy/award33.png',
-    problem2:'___用黑色的___写了字',
+    problem2:'____用黑色的____写了字',
     difficulty:2,
     punish:14,
     answer:[
       '小绿  水彩笔',
       '小红  铅笔',
-      '小蓝  钢笔',
-      '小明  水彩笔'
+      '小绿  钢笔',
+      '小红  水彩笔'
     ],
     rightIndex:0
   },
@@ -63,9 +63,9 @@ var question = [
     punish:10,
     answer:[
       '灰色  小白',
-      '蓝色  小明',
+      '灰色  小明',
       '紫色  小白',
-      '黑色  小明'
+      '紫色  小明'
     ],
     rightIndex:2
   },
@@ -77,9 +77,9 @@ var question = [
     punish:10,
     answer:[
       '灰色  小白',
-      '蓝色  小明',
+      '灰色  小明',
       '紫色  小白',
-      '黑色  小明'
+      '紫色  小明'
     ],
     rightIndex:2
   },
@@ -90,10 +90,10 @@ var question = [
     difficulty:3,
     punish:10,
     answer:[
-      '蛋糕  正方形',
-      '桌子  圆形',
+      '水杯  正方形',
+      '书包  正方形',
       '水杯  三角形',
-      '汽车  五角星'
+      '书包  三角形'
     ],
     rightIndex:2
   },
@@ -105,9 +105,9 @@ var question = [
     punish:10,
     answer:[
       '蓝色  番茄',
-      '绿色  土豆 ',
-      '黄色  黄瓜',
-      '灰色  西瓜'
+      '绿色  番茄',
+      '蓝色  黄瓜',
+      '绿色  西瓜'
     ],
     rightIndex:0
   },

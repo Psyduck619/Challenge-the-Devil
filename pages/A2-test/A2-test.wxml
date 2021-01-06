@@ -7,7 +7,7 @@
     </view>
     <view class="right" style="background-image:url(http://yuan619.xyz/wjl/title.png)">
       <view class="name">
-        寻找大写字母与小写字母相同的单元格
+       {{dialog}}
       </view>
       <view class="time">
         {{minute}}:{{second }}:{{mills%100 }}
@@ -32,4 +32,7 @@
       <view class="zan-text" wx:if="{{practice==true}}">你的分数为:{{score * 2}}</view>
     </view>
   </view>
+  <view class="begin" bindtap="handleredirect">
+    <text class="button">跳过测试</text>
+</view>
 </view>

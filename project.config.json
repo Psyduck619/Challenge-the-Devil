@@ -81,6 +81,13 @@
           "id": -1,
           "name": "pages/p2-story/p2-story",
           "pathName": "pages/p2-story/p2-story",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/S1-story1/S1-story1",
+          "pathName": "pages/S1-story1/S1-story1",
           "scene": null
         }
       ]

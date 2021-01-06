@@ -33,19 +33,17 @@ Page({
     var question
     var number
     number = numberInfo.postList
+    question = questionInfo.postList
     if (getApp().globalData.level == 1) {
       this.setData({
         imgnumber: 4,
         practice: getApp().globalData.practice
       })
-      question = questionInfo.postList
-      
     } else if (getApp().globalData.level == 2) {
       this.setData({
         imgnumber: 9,
         practice: getApp().globalData.practice
       })
-      question = questionInfo.postList2
     }
 
     var selectQuestionId = this.data.selectQuestionId
@@ -302,7 +300,7 @@ Page({
 
   nextgame: function () {
     var that = this
-    var score = 60 + this.data.scole * 8
+    var score = this.data.scole * 20
     this.setData({
       scole: score / 2
     })

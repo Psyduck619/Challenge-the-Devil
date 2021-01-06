@@ -27,16 +27,16 @@
         <canvas class="progress_canvas" canvas-id="secondCanvas"></canvas>
     </view>
     <view id="{{isPage3?'question':'hiden'}}">
-      <view wx:if="{{imgnumber==4}}" class="imglist-fourimg" bindtap="selectimg" 
+      <view  class="imglist-fourimg" bindtap="selectimg" 
       wx:for="{{question[questionnum].img}}" wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
         <image class="{{selectid==i?'imglist-fourimg-image-select':'imglist-fourimg-image'}}" src='{{item}}'></image>
       </view>
 
-      <view wx:if="{{imgnumber==9}}" class="imglist-nineimg" bindtap="selectimg" 
+      <!-- <view wx:if="{{imgnumber==9}}" class="imglist-nineimg" bindtap="selectimg" 
       wx:for="{{question[questionnum].img}}" wx:for-item="item" wx:for-index="i" wx:key="*this" data-index="{{i}}">
         <image class="{{selectid==i?'imglist-fourimg-image-select':'imglist-fourimg-image'}}" src='{{item}}'></image>
         
-      </view>
+      </view> -->
 
       
     </view>

@@ -409,13 +409,13 @@ scaleTap: function(event) {
       let wrongnumber=this.data.wrong;//单局错误次数
       var fs=0;//最后返回的分数
     if(this.data.choosedSize==3){//3x3的计分规则
-      if(time<=8){
+      if(time<=5){
         fs=100;
       }
-      else if(time<=12){
+      else if(time<=9){
         fs=80;
       }
-      else if(time<=19){
+      else if(time<=12){
         fs=60;
       }
       else{
@@ -433,13 +433,13 @@ scaleTap: function(event) {
         }
       }
     }else if(this.data.choosedSize==4){//4x4的计分规则
-      if(time<=16){
+      if(time<=13){
         fs=100;
       }
-      else if(time<=21){
+      else if(time<=18){
         fs=80;
       }
-      else if(time<=30){
+      else if(time<=23){
         fs=60;
       }
       else{
@@ -482,6 +482,9 @@ scaleTap: function(event) {
           fs=fs-3*wrongnumber;
         }
       }
+    }
+    if(fs<30){
+      fs=30;
     }
     return fs;
   },

@@ -18,6 +18,8 @@
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
   <view class="zan-dialog__mask" bindtap="toggleDialog" />
   <view class="zan-dialog__container">
-    <view class="zan-text">接下来是教学关,认真学习哦</view>
+    <view class="zan-text">接下来是教学关,认真学习哦.
+    仔细看字的文字,不要被颜色迷惑哦
+    </view>
   </view>
 </view>

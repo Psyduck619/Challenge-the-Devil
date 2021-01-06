@@ -138,14 +138,14 @@ Page({
         app.globalData.time1 = this.data.timer;
         app.globalData.error = this.data.errorTime;
         //判断是否为第六关,只有第六关可以跳转
-        if (id == 6) {
+        if (id == 5) {
             /*计算分数
                 回答错误 扣3分 , 时间上每过1秒扣0.5分,低于一定分数启动保底机制
                 保留0位小数
             */
             let t = app.globalData.time1 / 1000;
             if (t < 50) {
-                app.globalData.A1score = (50 - 3 * app.globalData.error - t * 0.4).toFixed(0);
+                app.globalData.A1score = (50 - 3 * app.globalData.error - t * 0.3).toFixed(0);
             }
             //分数太低了,给点奖励分
             else {

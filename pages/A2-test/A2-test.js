@@ -16,8 +16,8 @@ Page({
         //已选择矩阵
         select: [
         ],
-        age2:[10,8],
-        age1:[9,6],
+        age2:[8,6],
+        age1:[8,6],
         checkcnt: 0,
         hidden: false,
         over: false,
@@ -26,7 +26,9 @@ Page({
         minute: 0,
         showDialog: false,
         practice:false,
-        score:0
+        score:0,
+        dialog:"",
+        level:0
     },
 
     /**
@@ -38,21 +40,54 @@ Page({
         let random=4;
         let row=0;
         let col=0;
-        if(getApp().globalData.level===2)
-        {
-            row=this.data.age2[0];
-            col=this.data.age2[1];
-            random=Math.floor(Math.random()*5)+6;
-        }
-        else if(getApp().globalData.level===1)
-        {
-            row=this.data.age1[0];
-            col=this.data.age1[1];
-            random=Math.floor(Math.random()*4)+4;
-        }
         let n1=new Array();
         let select=new Array();
         let key=0;
+        if(getApp().globalData.level===1)
+        {
+            row=this.data.age1[0];
+            col=this.data.age1[1];
+            random=Math.floor(Math.random()*3)+3;
+            this.setData({
+              dialog:"找出前后两个数字相同的格子",
+              level:1
+            })
+            for(let i=0;i<row;++i)
+            {
+                n1[i]=new Array();
+                select[i]=new Array();
+            }
+            for(let i=0;i<row;++i)
+            {
+                for(let j=0;j<col;++j)
+                {
+                    let a1= Math.floor(Math.random()*5+1);
+                    let a2;
+                    if(Math.floor(Math.random()*8)+1===2)
+                    {
+                        a2=a1;
+                    }
+                    else{
+                        a2= Math.floor(Math.random()*5+1);
+                    }
+                    if(a1===a2)
+                    {
+                        key++;
+                    }
+                    n1[i][j]=a1+""+a2;
+                    select[i][j]=0;
+                }
+            }
+        }
+        else if(getApp().globalData.level===2)
+        {
+            row=this.data.age2[0];
+            col=this.data.age2[1];
+            random=Math.floor(Math.random()*4)+4;
+            this.setData({
+              dialog:"找出大写字母与小写字母相同的格子",
+              level:2
+            })
         for(let i=0;i<row;++i)
         {
             n1[i]=new Array();
@@ -79,6 +114,7 @@ Page({
                 select[i][j]=0;
             }
         }
+      }
         this.setData({
             num:n1,
             keynum:key,
@@ -104,10 +140,52 @@ Page({
             minute
         })
     },
+    handleredirect(e)
+    {
+        //直接跳过,就给个鼓励分
+        app.globalData.A2score=35;
+        this.setData({
+          showDialog: !this.data.showDialog
+      })
+        this.setData({
+            score:  app.globalData.A2score
+        })
+        setTimeout(function () {
+            if(getApp().globalData.practice==false){
+                wx.request({
+                    url: 'https://www.yuan619.xyz:8887/history/upscore4',
+                    data: {
+                      id: app.globalData.gameId,
+                      score: app.globalData.A2score,
+                    },
+                    method: 'POST',
+                    header: {
+                      "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    success: function (res) {
+                      console.log(res.data);
+                    },
+                    fail: function (res) {
+                      console.log("...fail...");
+                    }
+                  })
+                wx.redirectTo({
+                  url: '/pages/S1-story1/S1-story1'
+                })
+              }
+              else if(getApp().globalData.practice==true){
+                wx.switchTab({
+                  url: '/pages/practice/practice',
+                })
+              }
+        }, 1050)
+    },
     handletapview(e) {
         let col = parseInt(e.target.dataset.col)
         let row = parseInt(e.target.dataset.row)
         let select=this.data.select;
+        let level=this.data.level;
+        if(level===2){
         if (this.data.num[row][col].charAt(0).charCodeAt()+32 === 
         this.data.num[row][col].charAt(1).charCodeAt()
             && select [row][col]===0) {
@@ -119,8 +197,8 @@ Page({
                 select: arr,
                 checkcnt: n
             })
-            
-        } else {
+        }
+         else {
             //闪烁
             let arr = this.data.select;
             if(arr[row][col] ===0)
@@ -132,6 +210,35 @@ Page({
                 select: arr,
             })
         }
+      }
+      else if(level===1)
+      {
+        if (this.data.num[row][col].charAt(0) === 
+        this.data.num[row][col].charAt(1)
+            && select [row][col]===0)
+            {
+              let arr = this.data.select;
+              let n = this.data.checkcnt + 1;
+              arr[row][col] = 1;
+              //turn green
+              this.setData({
+                  select: arr,
+                  checkcnt: n
+              })
+            }
+            else {
+              //闪烁
+              let arr = this.data.select;
+              if(arr[row][col] ===0)
+                  arr[row][col] = -1;
+                  else if(arr[row][col] ===-1){
+                  arr[row][col] = 0;
+              }
+              this.setData({
+                  select: arr,
+              })
+          }
+      }
         //whether  all the ceil is chosed
         if (this.data.checkcnt === this.data.keynum) {
             this.setData({
