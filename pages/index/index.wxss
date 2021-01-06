@@ -47,7 +47,7 @@ page{
 .start{
   width: 75% !important;
   height: 160rpx;
-  margin: 0 auto;
+  margin: 200rpx auto;
   text-align: center;
   display: flex;
   align-items: center;

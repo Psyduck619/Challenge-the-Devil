@@ -1,4 +1,4 @@
 <view class="container flex-wrap" style="background-image:url(http://yuan619.xyz/lsq/forest.png)">
-  <textarea class="input" focus type="text" placeholder="请提出您宝贵的意见..." bindinput="contactInput"></textarea>
+  <textarea class="input" focus type="text" placeholder="请留下您宝贵的意见..." bindinput="contactInput"></textarea>
   <button class="commit" bindtap="commit">提交</button>
 </view>

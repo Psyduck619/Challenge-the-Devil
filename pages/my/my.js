@@ -15,7 +15,7 @@ Page({
       },
       {
         "id": "2",
-        "text": "孩子信息",
+        "text": "个人信息",
         "img": "http://yuan619.xyz/lsq/personal.png"
       },
       {

@@ -2,7 +2,7 @@ let app = getApp()
 Page({
 
   data: {
-    score: [],
+    score: [90,88,86,92],
     personPosition: 'left'
   },
   toNext: () =>{
