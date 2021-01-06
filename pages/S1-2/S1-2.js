@@ -304,20 +304,23 @@ Page({
 nextgame: function () {
   var that = this
   var score = this.data.scole * 20
-  this.setData({
-    scole: score / 2
-  })
+  if(getApp().globalData.level==1&&getApp().globalData.practice==false){
+    that.setData({
+      scole: score
+    })
+  }
+  else{
+    that.setData({
+      scole: score / 2
+    })
+  }
+  
   console.log(this.data.scole, "分")
   setTimeout(() => {
     that.setData({
       showDialog: !that.data.showDialog
     })
   }, 500)
-  if(getApp().globalData.level==1&&getApp().globalData.practice ==false){
-    this.setData({
-      scole: score * 2
-    })
-  }
   setTimeout(function () {
 
     if (getApp().globalData.practice == false) {
