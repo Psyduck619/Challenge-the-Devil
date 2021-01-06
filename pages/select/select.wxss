@@ -18,8 +18,8 @@ page{
   width: 80%;
   /* height: 55%; */
   margin-top: 40rpx;
-  padding-top: 20rpx;
-  padding-bottom: 30rpx;
+  padding-top: 50rpx;
+  padding-bottom: 60rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
