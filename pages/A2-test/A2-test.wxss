@@ -21,7 +21,7 @@
     height: 300rpx;
     text-align: center;
     color: #333;
-    font-size: 50rpx;
+    font-size: 40rpx;
     font-weight: bold;
     background-repeat: no-repeat;
     background-size: 100%;

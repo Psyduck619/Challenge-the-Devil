@@ -15,7 +15,7 @@
   </view>
   <!-- 热身界面 -->
   <view id="hint_slot" wx:if="{{!reading}}">
-    <image  mode="aspectFit" src="http://yuan619.xyz/skd/hint_slot.png"></image>
+    <image  mode="aspectFit" src="http://yuan619.xyz/skd/hint_slot1.png"></image>
   </view>
   <!-- 游戏区域 -->
 	<view class="area" wx:if="{{!closeGrid&&canlook}}">

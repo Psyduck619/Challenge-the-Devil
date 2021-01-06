@@ -107,7 +107,7 @@ Page({
     //   MaxDimension: 100
     // },
     // currentPetNumber: 'm000225',
-    dimension: [90, 90, 90, 90, 90],
+    dimension: [0, 0, 0, 0, 0],
     // radarData: {},
     // currentRadarImage: "",
     content: [
@@ -167,6 +167,9 @@ Page({
         console.log("...fail...");
       }
     })
+    setTimeout(() => {
+      chart.setOption(option);
+    }, 600)
     // setTimeout(()=>{
     //   const radarData = this.returnRadarData(this.data.dimension);
     //   this.setData({radarData});
