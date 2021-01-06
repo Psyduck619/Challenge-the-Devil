@@ -313,6 +313,11 @@ nextgame: function () {
       showDialog: !that.data.showDialog
     })
   }, 500)
+  if(getApp().globalData.level==1&&getApp().globalData.practice ==false){
+    this.setData({
+      scole: score * 2
+    })
+  }
   setTimeout(function () {
 
     if (getApp().globalData.practice == false) {
