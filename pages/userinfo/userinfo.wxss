@@ -132,3 +132,9 @@ input{
   /* padding: 10rpx; */
   text-align: start;
 }
+.ps{
+  color: #333;
+  /* margin-bottom: 20rpx; */
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}

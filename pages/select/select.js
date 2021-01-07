@@ -15,7 +15,15 @@ Page({
   },
   //上传信息
   bind_start:function(e){
-    app.globalData.practice = false
+    if (this.data.name == null || this.data.sex == 0 || this.data.age == 0 || this.data.name == '') {
+      wx.showToast({
+        title: '请输入完整的信息，确保游戏正常进行',
+        icon:'none',
+        duration:1200,
+        mask:true
+      })
+    } else {
+      app.globalData.practice = false
     let that = this
     //更新魔法师信息
     wx.request({
@@ -79,6 +87,7 @@ Page({
     wx.redirectTo({
       url: '/pages/P1-story/P1-story'
     })
+    }
   },
   //得到输入的姓名
   nameInput:function(e){
